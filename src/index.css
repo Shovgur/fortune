@@ -16,14 +16,22 @@ body {
   height: 100vh;
 }
 .background-luck {
-  background: url("LuckBackground.png");
+  background: url('LuckBackground.png');
 }
 
-#canvas{
-    width: 514px
+#canvas {
+  width: 514px;
 }
 
-.button {
+.skewed {
+  transform: skew(-19deg);
+}
+
+.text-shadow {
+  text-shadow: 0px 4px 12px #000000;
+}
+
+/* .button {
   padding: 0 25px;
   height: 60px;
   color: #fff;
@@ -58,4 +66,4 @@ body {
   position: absolute;
   top: 0;
   right: -30px;
-}
+} */
