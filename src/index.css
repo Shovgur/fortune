@@ -19,6 +19,10 @@ body {
   background: url("LuckBackground.png");
 }
 
+#canvas{
+    width: 514px
+}
+
 .button {
   padding: 0 25px;
   height: 60px;
