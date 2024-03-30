@@ -26,9 +26,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-wheel-of-prizes:
-    specifier: ^1.0.9
-    version: 1.0.9(react@18.2.0)
   tailwind-merge:
     specifier: ^2.2.2
     version: 2.2.2
@@ -2373,16 +2370,6 @@ packages:
       invariant: 2.2.4
       react: 18.2.0
       tslib: 2.6.2
-    dev: false
-
-  /react-wheel-of-prizes@1.0.9(react@18.2.0):
-    resolution: {integrity: sha512-aqRfC8+RZwRPp3fJMmcefxLpRfV3dEfaLZP0NQhwy7vXpf0zuaxesZ+Ut5yFkWyzTuxI3b/qKVbtBB1Yy6OePw==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16.0.0
-    dependencies:
-      '@babel/runtime': 7.24.1
-      react: 18.2.0
     dev: false
 
   /react@18.2.0:

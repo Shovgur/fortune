@@ -23,6 +23,12 @@ module.exports = {
         'gradient-green':
           'radial-gradient(45.88% 297.28% at 45.88% 50%, #6DD767 0%, rgba(109, 215, 103, 0) 92.71%), linear-gradient(90deg, #3D882F 0%, #2A6326 91.75%)',
       },
+      boxShadow: {
+        wheel: '0px 0px 75.47586059570312px 0px #401265 inset',
+      },
+      transitionDuration: {
+        8000: '8000ms',
+      },
       keyframes: {
         'accordion-down': {
           from: { height: '0' },

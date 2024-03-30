@@ -31,6 +31,14 @@ body {
   text-shadow: 0px 4px 12px #000000;
 }
 
+.spin-shadow {
+  text-shadow: 0px 5px 5px rgba(0, 0, 0, 0.08);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 /* .button {
   padding: 0 25px;
   height: 60px;
