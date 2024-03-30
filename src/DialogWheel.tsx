@@ -2,6 +2,45 @@ import StaticWheel from './components/ui/wheel/StaticWheel';
 import SpinButton from './components/ui/wheel/SpinButton';
 import { useRef, useState } from 'react';
 
+const lots = [
+  {
+    title: '50 free spins',
+  },
+  {
+    title: 'x1',
+  },
+  {
+    title: 'x2 money',
+  },
+  {
+    title: '100 free spins',
+  },
+  {
+    title: 'free money',
+  },
+  {
+    title: 'bet',
+  },
+  {
+    title: 'x1',
+  },
+  {
+    title: 'jackpot',
+  },
+  {
+    title: 'x3 money',
+  },
+  {
+    title: 'free money',
+  },
+  {
+    title: '10 free spins',
+  },
+  {
+    title: 'x3',
+  },
+];
+
 const DialogWhell = () => {
   const wheelRef = useRef<HTMLImageElement>(null);
   const [deg, setDeg] = useState(0);
@@ -9,7 +48,14 @@ const DialogWhell = () => {
   function spin() {
     if (!wheelRef.current) return;
 
-    const deg = Math.floor(Math.random() * 360 + 5000);
+    const randomItemDeg = Math.random() * 359;
+
+    const winLotIndex = Math.floor(randomItemDeg / 30);
+    console.log(`winner: ${lots[winLotIndex].title}`);
+
+    // - 15 because the wheel starts rotating from the center of 50 free spins lot
+    // 360 * 14 means 14 more rotations
+    const deg = Math.floor(randomItemDeg - 15 + 360 * 14);
     setDeg(deg);
   }
 
