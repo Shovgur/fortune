@@ -9,13 +9,13 @@ function App() {
   const transitionDuration = 10;
   return (
     <>
-      <Luck />
+      {/* <Luck /> */}
       {/* <DialogWhell /> */}
-      {/* <McRoulette
+      <McRoulette
         weapons={peaks}
         weaponsCount={weaponsCount}
         transitionDuration={transitionDuration}
-      /> */}
+      />
     </>
   );
 }
