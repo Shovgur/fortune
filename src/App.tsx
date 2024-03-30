@@ -10,12 +10,12 @@ function App() {
   return (
     <>
       {/* <Luck /> */}
-      <DialogWhell />
-      {/* <McRoulette
+      {/* <DialogWhell /> */}
+      <McRoulette
         weapons={peaks}
         weaponsCount={weaponsCount}
         transitionDuration={transitionDuration}
-      /> */}
+      />
     </>
   );
 }

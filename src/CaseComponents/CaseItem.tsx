@@ -1,34 +1,25 @@
-import cl from "./RouletteItem.module.scss";
-
 interface rouletteItemProps {
   id: number;
-  weapon_name: string;
-  skin_name: string;
-  rarity: string;
-  steam_image: string;
   isLoser: boolean;
 }
 
-const RouletteItem = ({
-  id,
-  weapon_name,
-  skin_name,
-  rarity,
-  steam_image,
-  isLoser,
-}: rouletteItemProps) => {
+const RouletteItem = ({ id, isLoser }: rouletteItemProps) => {
   return (
     <div
-      className={cl.evWeapon}
-      style={isLoser ? { opacity: "0.5" } : { opacity: "1" }}
+      className={`h-full aspect-square flex  relative ${
+        isLoser ? "opacity-50" : "opacity-100"
+      }`}
     >
-      <div className={`${cl.evWeaponInner}`} id={String(id)}>
-        <div className={`${cl.evWeaponRarity} ${cl[rarity]}`}></div>
-        <img src={steam_image} alt={weapon_name} />
-        <div className={cl.evWeaponText}>
-          <p>{weapon_name}</p>
-          <p>{skin_name}</p>
-        </div>
+      <img src="../../public/background_item_roulette.png" alt="item" />
+      <div
+        className="w-full h-full flex items-center justify-center absolute"
+        id={String(id)}
+      >
+        <img
+          className="pb-[25px]"
+          src="../../public/Item_perk_1.svg"
+          alt="item"
+        />
       </div>
     </div>
   );
