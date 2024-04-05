@@ -5,18 +5,18 @@ import { Roulette, weaponAttributes } from "../../roulette.clases";
 import RouletteControls from "./RouletteControls";
 
 interface RouletteElementParams {
-  weapons: weaponAttributes[];
-  weaponsCount: number;
+  chip: weaponAttributes[];
+  chipCount: number;
   transitionDuration: number;
 }
 
 const McRoulette = ({
-  weapons,
-  weaponsCount,
+  chip,
+  chipCount,
   transitionDuration,
 }: RouletteElementParams) => {
-  const [rouletteWeapons, setRouletteWeapons] =
-    useState<weaponAttributes[]>(weapons);
+  const [roulettechip, setRoulettechip] =
+    useState<weaponAttributes[]>(chip);
   const [weaponPrizeId, setWeaponPrizeId] = useState<number>(-1);
   const [isReplay, setIsReplay] = useState<boolean>(false);
   const [isSpin, setIsSpin] = useState<boolean>(false);
@@ -24,33 +24,33 @@ const McRoulette = ({
   const [winHistory, setWinHistory] = useState<weaponAttributes[]>([]);
 
   const rouletteContainerRef = useRef<HTMLDivElement>(null);
-  const weaponsRef = useRef<HTMLDivElement>(null);
+  const chipRef = useRef<HTMLDivElement>(null);
 
   function transitionEndHandler() {
-    setWinHistory(winHistory.concat(rouletteWeapons[weaponPrizeId]));
+    setWinHistory(winHistory.concat(roulettechip[weaponPrizeId]));
     setIsSpin(false);
     setIsSpinEnd(true);
   }
 
   function prepare() {
-    weaponsRef.current!.style.transition = "none";
-    weaponsRef.current!.style.left = "0px";
+    chipRef.current!.style.transition = "none";
+    chipRef.current!.style.left = "0px";
   }
 
   function load() {
-    let winner = weapons[Math.floor(Math.random() * weapons.length)];
+    let winner = chip[Math.floor(Math.random() * chip.length)];
 
     const roulette = new Roulette({
       winner,
-      weapons,
+      chip,
       rouletteContainerRef,
-      weaponsRef,
-      weaponsCount: weaponsCount,
+      chipRef,
+      chipCount: chipCount,
       transitionDuration: transitionDuration,
     });
 
-    roulette.set_weapons();
-    setRouletteWeapons(roulette.weapons);
+    roulette.set_chip();
+    setRoulettechip(roulette.chip);
 
     return roulette;
   }
@@ -114,16 +114,16 @@ const McRoulette = ({
       <div className={cl.evRoulette}>
         <div className="z-[1100] absolute top-0 left-1/2 h-full w-[3px] bg-[#f74e7f]"></div>
         <div
-          ref={weaponsRef}
+          ref={chipRef}
           className="left-0 relative flex items-center  h-full whitespace-nowrap"
           onTransitionEnd={transitionEndHandler}
         >
-          {rouletteWeapons.map((w, i) => {
+          {roulettechip.map((w, i) => {
             return (
               <RouletteItem
                 key={i}
                 id={i}
-                isLoser={i !== weaponPrizeId - 1 && !isSpin && isSpinEnd}
+                isLoser={i !== weaponPrizeId -1  && !isSpin && isSpinEnd}
               />
             );
           })}

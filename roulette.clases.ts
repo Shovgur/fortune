@@ -28,12 +28,12 @@ export class Weapon {
 
 export interface rouletteAttributes {
   winner: weaponAttributes;
-  weapons: weaponAttributes[];
+  chip: weaponAttributes[];
 
   rouletteContainerRef: Ref<HTMLElement>;
-  weaponsRef: Ref<HTMLElement>;
+  chipRef: Ref<HTMLElement>;
 
-  weaponsCount?: number;
+  chipCount?: number;
   transitionDuration?: number;
   itemWidth?: number;
 }
@@ -41,14 +41,14 @@ export interface rouletteAttributes {
 // КЛАСС РУЛЕТКИ
 export class Roulette {
   winner: weaponAttributes;
-  allWeapons: weaponAttributes[];
+  allchip: weaponAttributes[];
 
   rouletteWrapper: Ref<HTMLElement>;
   weaponWrapper: Ref<HTMLElement>;
 
-  weapons: Weapon[];
+  chip: Weapon[];
 
-  weaponsCount: number;
+  chipCount: number;
   weaponPrizeId: number;
 
   transitionDuration: number;
@@ -56,26 +56,26 @@ export class Roulette {
   itemWidth: number;
 
   constructor(attrs: rouletteAttributes) {
-    // атрибуты для генерации массива weapons
+    // атрибуты для генерации массива chip
     this.winner = attrs.winner;
-    this.allWeapons = attrs.weapons;
+    this.allchip = attrs.chip;
 
     // тут будет всё оружие (оружие-приз + оружие-актёры)
-    this.weapons = [];
+    this.chip = [];
 
     // родительский DOM-элемент для рулетки
-    this.rouletteWrapper = attrs.weaponsRef;
+    this.rouletteWrapper = attrs.chipRef;
 
     // родительский DOM-элемент для DOM-элементов оружия (он вращается)
-    this.weaponWrapper = attrs.weaponsRef;
+    this.weaponWrapper = attrs.chipRef;
 
     // общее количество оружия
-    this.weaponsCount = attrs.weaponsCount || 50;
+    this.chipCount = attrs.chipCount || 50;
 
     // id приза
     this.weaponPrizeId = this.randomRange(
-      this.weaponsCount / 2,
-      this.weaponsCount - 5
+      this.chipCount / 2,
+      this.chipCount - 5
     );
 
     this.transitionDuration = attrs.transitionDuration || 10;
@@ -94,20 +94,20 @@ export class Roulette {
     }
   };
 
-  set_weapons = () => {
-    let weapons: Weapon[] = []; // объявляем массив оружия
-    let weapon_actors_len = this.allWeapons.length; // количество оружия пришедшее с бд
+  set_chip = () => {
+    let chip: Weapon[] = []; // объявляем массив оружия
+    let weapon_actors_len = this.allchip.length; // количество оружия пришедшее с бд
 
     const set_weapon_actors = (from_i: number, to_i: number) => {
       let j = 0;
-      const createdWeapons: Weapon[] = [];
+      const createdchip: Weapon[] = [];
       for (let i = from_i; i <= to_i; i += 1) {
         // создаем оружие с индексом i и атрибутами j
-        createdWeapons.push(new Weapon(i, this.allWeapons[j]));
+        createdchip.push(new Weapon(i, this.allchip[j]));
         j = j === weapon_actors_len - 1 ? 0 : j + 1;
       }
-      this.shuffle(createdWeapons);
-      return createdWeapons;
+      this.shuffle(createdchip);
+      return createdchip;
     };
 
     // нет оружия с бд - ошибка
@@ -119,16 +119,16 @@ export class Roulette {
      * сетаем оружия в размере количества
      *  оружия в рулетке с 0 до id приза
      */
-    weapons = weapons.concat(set_weapon_actors(0, this.weaponPrizeId - 1));
+    chip = chip.concat(set_weapon_actors(0, this.weaponPrizeId - 1));
 
     // создаем оружие приз
-    weapons[this.weaponPrizeId] = new Weapon(this.weaponPrizeId, this.winner);
+    chip[this.weaponPrizeId] = new Weapon(this.weaponPrizeId, this.winner);
 
     /** сетаем оружия в id приза до конца */
-    weapons = weapons.concat(
-      set_weapon_actors(this.weaponPrizeId + 1, this.weaponsCount - 1)
+    chip = chip.concat(
+      set_weapon_actors(this.weaponPrizeId + 1, this.chipCount - 1)
     );
-    this.weapons = weapons;
+    this.chip = chip;
   };
 
   /** ВРАЩЕНИЕ РУЛЕТКИ

@@ -5,15 +5,15 @@ import peaks from './peaks.json';
 import './index.css';
 
 function App() {
-  const weaponsCount = 150;
+  const chipCount = 150;
   const transitionDuration = 10;
   return (
     <>
       {/* <Luck /> */}
       {/* <DialogWhell /> */}
       <McRoulette
-        weapons={peaks}
-        weaponsCount={weaponsCount}
+        chip={peaks}
+        chipCount={chipCount}
         transitionDuration={transitionDuration}
       />
     </>
