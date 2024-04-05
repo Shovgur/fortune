@@ -1,27 +1,6 @@
-$rouletteHeight: 210px;
-
 .history {
   position: absolute;
   top: 10px;
-}
-
-.evRoulette {
-  background-image: url("../../public/roulette_bg.png");
-  width: 1110px;
-  font-family: sans-serif;
-  height: $rouletteHeight;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid #232730;
-  margin-top: 56px;
-}
-
-.evWeaponInner img {
-  width: 120px;
-  height: 90px;
-  position: absolute;
-  top: 0;
-  left: 35px;
 }
 
 .button {

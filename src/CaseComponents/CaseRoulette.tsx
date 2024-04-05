@@ -15,8 +15,7 @@ const McRoulette = ({
   chipCount,
   transitionDuration,
 }: RouletteElementParams) => {
-  const [roulettechip, setRoulettechip] =
-    useState<weaponAttributes[]>(chip);
+  const [roulettechip, setRoulettechip] = useState<weaponAttributes[]>(chip);
   const [weaponPrizeId, setWeaponPrizeId] = useState<number>(-1);
   const [isReplay, setIsReplay] = useState<boolean>(false);
   const [isSpin, setIsSpin] = useState<boolean>(false);
@@ -71,7 +70,7 @@ const McRoulette = ({
   }
 
   return (
-    <div className="lg:w-[1112px] lg:h-[736px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
+    <div className="lg:w-[1112px] lg:h-[736px] xl:w-[1478px] xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
       <div className="mt-12 flex items-start justify-between w-full px-[100px]">
         <div className="flex flex-col gap-8">
           <div className=" text-3xl text-white">
@@ -111,7 +110,7 @@ const McRoulette = ({
           alt="free_prize"
         />
       </div>
-      <div className={cl.evRoulette}>
+      <div className="w-full overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-3">
         <div className="z-[1100] absolute top-0 left-1/2 h-full w-[3px] bg-[#f74e7f]"></div>
         <div
           ref={chipRef}
@@ -123,7 +122,7 @@ const McRoulette = ({
               <RouletteItem
                 key={i}
                 id={i}
-                isLoser={i !== weaponPrizeId -1  && !isSpin && isSpinEnd}
+                isLoser={i !== weaponPrizeId && !isSpin && isSpinEnd}
               />
             );
           })}
