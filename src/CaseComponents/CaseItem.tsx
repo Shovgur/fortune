@@ -14,22 +14,23 @@ const CaseItem: React.FC<CaseItemProps> = ({
   caseName,
 }) => {
   return (
-    <div className="bg-[url('../public/Item/case_bg_1.png')] 2xl:w-[288px] 2xl:h-[486px] bg-cover">
-      <div className="flex flex-col 2xl:px-4 2xl:pt-6">
-        <div className="text-white flex justify-between">
+    <div className="bg-[url('../public/Item/case_bg_1.png')] 2xl:w-[288px] lg:w-[165px] lg:h-[280px] 2xl:h-[486px] bg-cover">
+      <div className="flex flex-col 2xl:px-4 2xl:pt-6 lg:pt-4 lg:px-3">
+        <div className="text-white flex justify-between lg:text-[10px] 2xl:text-[16px]">
           <p>Opened:</p>
           <p>{opened}</p>
         </div>
         <img
+          className="lg:w-[141px] lg:h-[100px] 2xl:w-[256px] 2xl:h-[175px]"
           src={`../../public/item/Cases/${image}.png`}
           alt={`${image}_case`}
         />
         <div className="flex flex-col text-white">
-          <p>{caseName}</p>
-          <p className="text-opacity-50 text-white">The case contains:</p>
+          <p className="2xl:text-[20px] lg:text-[12px]">{caseName}</p>
+          <p className="text-opacity-50 text-white 2xl:text-[16px] lg:text-[10px]">The case contains:</p>
         </div>
         <div className="pt-4">Mock data</div>
-        <button className="text-[20px] 2xl:mt-12 text-white bg-[url('../../public/Item/Button/buy_case_button.png')] bg-cover py-3 pt-[10px] pb-4">
+        <button className="2xl:text-[20px] lg:text-[12px] 2xl:mt-12 text-white bg-[url('../../public/Item/Button/buy_case_button.png')] lg:mt-[15px] bg-cover lg:pt-[7px] lg:pb-[6px] lg:px-8 2xl:px-3 2xl:pt-[10px] 2xl:pb-4">
           {price}
         </button>
       </div>

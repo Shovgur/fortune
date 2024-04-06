@@ -11,7 +11,7 @@ const CasePage: React.FC = () => {
     },
     {
       opened: "13 167",
-      price: "13,99$$",
+      price: "13,99$",
       image: "Case_diamond",
       caseName: "Diamond Case",
     },
@@ -30,15 +30,19 @@ const CasePage: React.FC = () => {
   ];
 
   return (
-    <div className="bg-[url('../public/cases_bg.png')] bg-cover py-9 2xl:w-[1478px] 2xl:h-[941px] flex flex-col items-center justify-end">
-      <div className="flex flex-col gap-16 items-center">
-        <div className="flex gap-6">
+    <div className="relative bg-cover  flex flex-col items-center justify-end">
+      <div className="flex flex-col z-20 gap-16 items-center">
+        <div className="flex gap-6 px-9">
           {cases.map((caseItem, index) => (
             <CaseItem key={index} {...caseItem} />
           ))}
         </div>
-        <div>...</div>
       </div>
+      <img
+        className="absolute z-10 top-1/2 -translate-y-1/2"
+        src="../../public/Cases_bg.png"
+        alt=""
+      />
     </div>
   );
 };
