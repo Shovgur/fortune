@@ -116,7 +116,7 @@ const McRoulette = ({
           className="left-0 relative flex items-center  h-full whitespace-nowrap"
           onTransitionEnd={transitionEndHandler}
         >
-          {roulettechip.map((w, i) => {
+          {roulettechip.map((_, i) => {
             return (
               <RouletteItem
                 key={i}
