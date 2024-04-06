@@ -11,7 +11,7 @@ function App() {
   const transitionDuration = 10;
   return (
     <Routes>
-      <Route path="/" element={<CasePage />} />
+      <Route path="/case" element={<CasePage />} />
 
       <Route
         path="/luck"
@@ -24,7 +24,7 @@ function App() {
         }
       />
       <Route path="/whell" element={<DialogWhell />} />
-      {/* <Luck /> */}
+      <Route path="/" element={<Luck />} />
     </Routes>
   );
 }
