@@ -1,6 +1,5 @@
 import { useRef, useState } from "react";
-import cl from "./roulette.module.scss";
-import RouletteItem from "./CaseItem";
+import RouletteItem from "./CaseRouletteItem";
 import { Roulette, weaponAttributes } from "../../roulette.clases";
 import RouletteControls from "./RouletteControls";
 

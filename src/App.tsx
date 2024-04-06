@@ -1,8 +1,9 @@
-import Luck from './Luck';
-import DialogWhell from './DialogWheel';
-import McRoulette from './CaseComponents/CaseRoulette';
-import peaks from './peaks.json';
-import './index.css';
+import Luck from "./Luck";
+import DialogWhell from "./DialogWheel";
+import McRoulette from "./CaseComponents/CaseRoulette";
+import peaks from "./peaks.json";
+import "./index.css";
+import CasePage from "./CaseComponents/CasePage";
 
 function App() {
   const chipCount = 150;
@@ -11,11 +12,12 @@ function App() {
     <>
       {/* <Luck /> */}
       {/* <DialogWhell /> */}
-      <McRoulette
+      {/* <McRoulette
         chip={peaks}
         chipCount={chipCount}
         transitionDuration={transitionDuration}
-      />
+      /> */}
+      <CasePage />
     </>
   );
 }
