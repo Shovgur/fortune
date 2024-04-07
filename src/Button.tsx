@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
 const Button = () => {
   return (
     <div className="text-center pt-12">
-      <a href="/case" className="relative flex cursor-pointer items-center justify-center text-[26px] text-white w-[368px] h-[98px]">
+      <Link
+        to="/case"
+        className="relative flex cursor-pointer items-center justify-center text-[26px] text-white w-[368px] h-[98px]"
+      >
         <div className="skewed absolute left-0  top-0 w-full h-full">
           <div className="absolute left-0 top-0 w-full h-full bg-gradient-gold p-1 rounded-[14px]" />
           <div className="bg-gradient-green rounded-[10px] py-3 px-5 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 w-[calc(100%-8px)] h-[calc(100%-8px)]" />
@@ -16,7 +20,7 @@ const Button = () => {
         <span className="relative inline-block py-4 px-8 text-shadow">
           Continue
         </span>
-      </a>
+      </Link>
     </div>
   );
 };
