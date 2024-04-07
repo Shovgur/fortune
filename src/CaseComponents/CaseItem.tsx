@@ -19,29 +19,9 @@ const CaseItem: React.FC<CaseItemProps> = ({
     linkTo = "/whell";
   }
 
-  let bgStyle: string;
-
-  switch (caseName) {
-    case "Money Wheel Case":
-      bgStyle =
-        "bg-[url('../../public/Item/Cases/MobileCases/case_whell_mob.png')]";
-      break;
-    case "Lucky Case":
-      bgStyle = `bg-[url('../../public/Item/Cases/MobileCases/case_lucky_mob.png')]`;
-      break;
-    case "Diamond Case":
-      bgStyle = `bg-[url('../../public/Item/Cases/MobileCases/case_diamond_mob.png')]`;
-      break;
-    case "Champion Case":
-      bgStyle = `bg-[url('../../public/Item/Cases/MobileCases/case_champion_mob.png')]`;
-      break;
-    default:
-      bgStyle = "bg-[url('../../public/Item/case_bg_1.png')]";
-  }
-
   return (
     <div
-      className={`${bgStyle} 2xl:w-[288px] lg:w-[165px] w-[358px] h-[182px] lg:h-[280px] 2xl:h-[486px] bg-cover`}
+      className={` bg-[url('../../public/Item/case_bg_1.png')] 2xl:w-[288px] lg:w-[165px] w-[358px] h-[182px] lg:h-[280px] 2xl:h-[486px] bg-cover`}
     >
       <div className="flex flex-col 2xl:px-4 2xl:pt-6 lg:pt-4 lg:px-3">
         <div className="text-white flex justify-between lg:text-[10px] 2xl:text-[16px]">

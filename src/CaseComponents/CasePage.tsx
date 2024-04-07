@@ -30,7 +30,7 @@ const CasePage: React.FC = () => {
   ];
 
   return (
-    <div className="relative bg-cover flex flex-col items-center justify-end">
+    <div className="relative bg-cover  flex flex-col items-center justify-end">
       <div className="flex flex-col z-20 gap-16 items-center">
         <div className="lg:flex lg:flex-row gap-6 px-9 flex flex-col">
           {cases.map((caseItem, index) => (
@@ -39,7 +39,7 @@ const CasePage: React.FC = () => {
         </div>
       </div>
       <img
-        className="absolute z-10 lg:visible hidden top-1/2 -translate-y-1/2"
+        className="absolute z-10 top-1/2 -translate-y-1/2"
         src="../../public/Cases_bg.png"
         alt=""
       />

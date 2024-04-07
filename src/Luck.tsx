@@ -7,7 +7,7 @@ const Luck = () => {
         <div className="pt-14 flex flex-col items-center gap-8 ">
           <img
             className="px-[91px]"
-            src="../public/Try-your_luck.png"
+            src="/public/Try-your_luck.png"
             alt="luck"
           />
           <p className="text-white">

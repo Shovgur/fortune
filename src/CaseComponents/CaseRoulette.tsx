@@ -69,7 +69,7 @@ const McRoulette = ({
   }
 
   return (
-    <div className="lg:w-[1112px] lg:h-[736px] xl:w-[1478px] xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
+    <div className="lg:w-[1112px] lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
       <div className="mt-12 flex items-start justify-between w-full px-[100px]">
         <div className="flex flex-col gap-8">
           <div className=" text-3xl text-white">
@@ -121,7 +121,7 @@ const McRoulette = ({
               <RouletteItem
                 key={i}
                 id={i}
-                isLoser={i !== weaponPrizeId && !isSpin && isSpinEnd}
+                isLoser={i !== weaponPrizeId -1 && !isSpin && isSpinEnd}
               />
             );
           })}
