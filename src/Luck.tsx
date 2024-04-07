@@ -23,7 +23,7 @@ const Luck = () => {
       />
       <img
         className="absolute lg:right-[22px] lg:top-[268px]"
-        src="/public/Item_perk_2.svg"
+        src="../public/Item_perk_2.svg"
         alt="perk_2"
       />
     </div>
