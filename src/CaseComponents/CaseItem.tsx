@@ -19,7 +19,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
     linkTo = "/whell";
   }
 
-  const imagePath = `../../public/item/Cases/${image}.png`;
+  const imagePath = require(`../../public/item/Cases/${image}.png`).default;
 
   return (
     <div
