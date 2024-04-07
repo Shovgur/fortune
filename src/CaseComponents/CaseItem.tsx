@@ -19,6 +19,8 @@ const CaseItem: React.FC<CaseItemProps> = ({
     linkTo = "/whell";
   }
 
+  const imagePath = `../../public/item/Cases/${image}.png`;
+
   return (
     <div
       className={` bg-[url('../../public/Item/case_bg_1.png')] 2xl:w-[288px] lg:w-[165px] w-[358px] h-[182px] lg:h-[280px] 2xl:h-[486px] bg-cover`}
@@ -30,7 +32,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
         </div>
         <img
           className="lg:w-[141px] lg:h-[100px] w-[181px] h-[124px] 2xl:w-[256px] 2xl:h-[175px]"
-          src={`../../public/item/Cases/${image}.png`}
+          src={imagePath}
           alt={`${image}_case`}
         />
         <div className="flex flex-col text-white">
