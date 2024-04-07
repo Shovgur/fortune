@@ -8,6 +8,8 @@ import box_icon from "../../public/icons/box_icon.svg";
 import girl_icon from "../../public/icons/girl_icon.svg";
 import free_prizes from "../../public/free_prizes.png";
 import { Link } from "react-router-dom";
+import back_button from "../../public/Item/Button/back_button.png"
+import close_button from "../../public/Item/Button/close_button.png"
 
 interface RouletteElementParams {
   chip: weaponAttributes[];
@@ -80,15 +82,15 @@ const McRoulette = ({
         <Link className="flex items-start justify-start max-h-8" to="/case">
           <img
             className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
-            src="../../public/Item/Button/back_button.png"
+            src={back_button}
             alt="back_button"
           />
         </Link>
         <Link className="flex items-start justify-start max-h-8" to="/case">
           <img
             className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
-            src="../../public/Item/Button/close_button.png"
-            alt="back_button"
+            src={close_button}
+            alt="close_button"
           />
         </Link>
       </div>
