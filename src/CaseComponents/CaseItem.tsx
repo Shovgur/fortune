@@ -1,5 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import case_1 from "../../public/Item/Cases/сase_champion.png";
+import case_2 from "../../public/Item/Cases/case_diamond.png";
+import case_3 from "../../public/Item/Cases/case_wheel.png";
+import case_4 from "../../public/Item/Cases/case_lucky.png";
 
 interface CaseItemProps {
   opened: string;
@@ -19,7 +23,23 @@ const CaseItem: React.FC<CaseItemProps> = ({
     linkTo = "/whell";
   }
 
-  const imagePath = require(`../../public/item/Cases/${image}.png`).default;
+  let caseImage;
+  switch (image) {
+    case "case_champion":
+      caseImage = case_1;
+      break;
+    case "case_diamond":
+      caseImage = case_2;
+      break;
+    case "case_wheel":
+      caseImage = case_3;
+      break;
+    case "case_lucky":
+      caseImage = case_4;
+      break;
+    default:
+      caseImage = case_2;
+  }
 
   return (
     <div
@@ -32,7 +52,7 @@ const CaseItem: React.FC<CaseItemProps> = ({
         </div>
         <img
           className="lg:w-[141px] lg:h-[100px] w-[181px] h-[124px] 2xl:w-[256px] 2xl:h-[175px]"
-          src={imagePath}
+          src={caseImage}
           alt={`${image}_case`}
         />
         <div className="flex flex-col text-white">

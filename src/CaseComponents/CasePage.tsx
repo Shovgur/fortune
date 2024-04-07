@@ -7,25 +7,25 @@ const CasePage: React.FC = () => {
     {
       opened: "200 351",
       price: "7,99$",
-      image: "Сase_champion",
+      image: "case_champion",
       caseName: "Champion Case",
     },
     {
       opened: "13 167",
       price: "13,99$",
-      image: "Case_diamond",
+      image: "case_diamond",
       caseName: "Diamond Case",
     },
     {
       opened: "45 015",
       price: "22,99$",
-      image: "Case_wheel",
+      image: "case_wheel",
       caseName: "Money Wheel Case",
     },
     {
       opened: "690 000",
       price: "5,99$",
-      image: "Case_lucky",
+      image: "case_lucky",
       caseName: "Lucky Case",
     },
   ];
