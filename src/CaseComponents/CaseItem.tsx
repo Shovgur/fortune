@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import case_1 from "../../public/Item/Cases/сase_champion.png";
 import case_2 from "../../public/Item/Cases/case_diamond.png";
 import case_3 from "../../public/Item/Cases/case_wheel.png";
+import case_bg from "../../public/Item/case_bg_1.png";
 import case_4 from "../../public/Item/Cases/case_lucky.png";
 
 interface CaseItemProps {
@@ -43,7 +44,8 @@ const CaseItem: React.FC<CaseItemProps> = ({
 
   return (
     <div
-      className={` bg-[url('../../public/Item/case_bg_1.png')] 2xl:w-[288px] lg:w-[165px] w-[358px] h-[182px] lg:h-[280px] 2xl:h-[486px] bg-cover`}
+      style={{ backgroundImage: `url(${case_bg})` }}
+      className={` 2xl:w-[288px] lg:w-[165px] w-[358px] h-[182px] lg:h-[280px] 2xl:h-[486px] bg-cover`}
     >
       <div className="flex flex-col 2xl:px-4 2xl:pt-6 lg:pt-4 lg:px-3">
         <div className="text-white flex justify-between lg:text-[10px] 2xl:text-[16px]">
