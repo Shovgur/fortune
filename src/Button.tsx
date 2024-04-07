@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import btn_bg from "../public/btn-bg.png";
 const Button = () => {
   return (
     <div className="text-center pt-12">
@@ -12,7 +13,7 @@ const Button = () => {
         </div>
         <img
           className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[calc(100%+10px)] h-[calc(100%-16px)] aspect-[372/82] max-w-none"
-          src="/btn-bg.png"
+          src={btn_bg}
           width={380}
           height={82}
           alt=""

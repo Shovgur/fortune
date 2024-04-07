@@ -2,6 +2,11 @@ import { useRef, useState } from "react";
 import RouletteItem from "./CaseRouletteItem";
 import { Roulette, weaponAttributes } from "../../roulette.clases";
 import RouletteControls from "./RouletteControls";
+import dollar_icon from '../../public/icons/dollar_icon.svg'
+import arrow_up from '../../public/icons/arrow_up.svg'
+import box_icon from "../../public/icons/box_icon.svg"
+import girl_icon from "../../public/icons/girl_icon.svg"
+import free_prizes from "../../public/free_prizes.png"
 
 interface RouletteElementParams {
   chip: weaponAttributes[];
@@ -90,22 +95,22 @@ const McRoulette = ({
               <p className="text-[#897DAA]">Opened:</p>
               <div className="flex">
                 <img
-                  src="../../public/icons/dollar_icon.svg"
+                  src={dollar_icon}
                   alt="dollar_icon"
                 />
                 <img
-                  src="../../public/icons/arrow_up.svg"
+                  src={arrow_up}
                   alt="arrow_up_icon"
                 />
-                <img src="../../public/icons/box_icon.svg" alt="box_icon" />
-                <img src="../../public/icons/girl_icon.svg" alt="girl_icon" />
+                <img src={box_icon} alt="box_icon" />
+                <img src={girl_icon} alt="girl_icon" />
               </div>
             </div>
           </div>
         </div>
         <img
           className="lg:w-[271px] lg:h-[204px]"
-          src="../../public/free_prizes.png"
+          src={free_prizes}
           alt="free_prize"
         />
       </div>

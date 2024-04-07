@@ -1,5 +1,6 @@
 import React from "react";
 import CaseItem from "./CaseItem";
+import cases_bg from "../../public/Cases_bg.png"
 
 const CasePage: React.FC = () => {
   const cases = [
@@ -40,7 +41,7 @@ const CasePage: React.FC = () => {
       </div>
       <img
         className="absolute z-10 top-1/2 -translate-y-1/2"
-        src="../../public/Cases_bg.png"
+        src={cases_bg}
         alt=""
       />
     </div>

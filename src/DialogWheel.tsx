@@ -1,6 +1,7 @@
 import StaticWheel from './components/ui/wheel/StaticWheel';
 import SpinButton from './components/ui/wheel/SpinButton';
 import { useRef, useState } from 'react';
+import prizes from "../public/prizes.png"
 
 const lots = [
   {
@@ -65,7 +66,7 @@ const DialogWhell = () => {
         <img
           ref={wheelRef}
           className="w-[calc(100%-13px)] h-[calc(100%-13px)] absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
-          src="prizes.png"
+          src={prizes}
           width={684}
           height={684}
           style={
