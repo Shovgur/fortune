@@ -1,10 +1,11 @@
 import React from "react";
 import cl from "./roulette.module.scss";
-import back_arrow from "../../public/icons/back_arrow.svg"
-import setting_icon from "../../public/icons/setting_icon.svg"
-import info from "../../public/icons/info.svg"
-import spinner from "../../public/icons/spinner-refresh.svg"
-import spin from "../../public/spin_case.svg"
+import back_arrow from "../../public/icons/back_arrow.svg";
+import setting_icon from "../../public/icons/setting_icon.svg";
+import info from "../../public/icons/info.svg";
+import spinner from "../../public/icons/spinner-refresh.svg";
+import spin from "../../public/spin_case.svg";
+import controls_bg from "../../public/controls_case_background.png";
 
 interface RouletteControlsProps {
   onSpin: () => void;
@@ -16,7 +17,10 @@ const RouletteControls: React.FC<RouletteControlsProps> = ({
   disabled,
 }) => {
   return (
-    <div className="w-[828px] lg:mt-[82px] bg-[url('../../public/controls_case_background.png')] relative bg-cover h-[200px]">
+    <div
+      style={{ backgroundImage: `url(${controls_bg})` }}
+      className="w-[828px] lg:mt-[82px] relative bg-cover h-[200px]"
+    >
       <div className="absolute top-1/2 -translate-y-1/2 lg:left-[90px] flex gap-6">
         <button className="border rounded-[20px] p-3">
           <img src={back_arrow} alt="back_arrow" />
