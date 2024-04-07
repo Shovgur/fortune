@@ -2,11 +2,12 @@ import { useRef, useState } from "react";
 import RouletteItem from "./CaseRouletteItem";
 import { Roulette, weaponAttributes } from "../../roulette.clases";
 import RouletteControls from "./RouletteControls";
-import dollar_icon from '../../public/icons/dollar_icon.svg'
-import arrow_up from '../../public/icons/arrow_up.svg'
-import box_icon from "../../public/icons/box_icon.svg"
-import girl_icon from "../../public/icons/girl_icon.svg"
-import free_prizes from "../../public/free_prizes.png"
+import dollar_icon from "../../public/icons/dollar_icon.svg";
+import arrow_up from "../../public/icons/arrow_up.svg";
+import box_icon from "../../public/icons/box_icon.svg";
+import girl_icon from "../../public/icons/girl_icon.svg";
+import free_prizes from "../../public/free_prizes.png";
+import { Link } from "react-router-dom";
 
 interface RouletteElementParams {
   chip: weaponAttributes[];
@@ -74,8 +75,25 @@ const McRoulette = ({
   }
 
   return (
-    <div className="lg:w-[1112px] lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
-      <div className="mt-12 flex items-start justify-between w-full px-[100px]">
+    <div className="lg:w-[1112px] pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
+      <div className=" max-h-8 flex justify-between w-full 2xl:px-6">
+        <Link className="flex items-start justify-start max-h-8" to="/case">
+          <img
+            className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
+            src="../../public/Item/Button/back_button.png"
+            alt="back_button"
+          />
+        </Link>
+        <Link className="flex items-start justify-start max-h-8" to="/case">
+          <img
+            className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
+            src="../../public/Item/Button/close_button.png"
+            alt="back_button"
+          />
+        </Link>
+      </div>
+
+      <div className=" flex items-start justify-between w-full px-[100px]">
         <div className="flex flex-col gap-8">
           <div className=" text-3xl text-white">
             <p>Champion Case</p>
@@ -94,14 +112,8 @@ const McRoulette = ({
             <div className="flex flex-col pl-[26px]">
               <p className="text-[#897DAA]">Opened:</p>
               <div className="flex">
-                <img
-                  src={dollar_icon}
-                  alt="dollar_icon"
-                />
-                <img
-                  src={arrow_up}
-                  alt="arrow_up_icon"
-                />
+                <img src={dollar_icon} alt="dollar_icon" />
+                <img src={arrow_up} alt="arrow_up_icon" />
                 <img src={box_icon} alt="box_icon" />
                 <img src={girl_icon} alt="girl_icon" />
               </div>
@@ -126,7 +138,7 @@ const McRoulette = ({
               <RouletteItem
                 key={i}
                 id={i}
-                isLoser={i !== weaponPrizeId -1 && !isSpin && isSpinEnd}
+                isLoser={i !== weaponPrizeId && !isSpin && isSpinEnd}
               />
             );
           })}

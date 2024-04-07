@@ -1,7 +1,6 @@
 import React from "react";
 import CaseItem from "./CaseItem";
-import cases_bg from "../../public/Cases_bg.png"
-
+import cases_bg from "../../public/Cases_bg.png";
 const CasePage: React.FC = () => {
   const cases = [
     {
