@@ -5,6 +5,7 @@ import case_2 from "../../public/Item/Cases/case_diamond.png";
 import case_3 from "../../public/Item/Cases/case_wheel.png";
 import case_bg from "../../public/Item/case_bg_1.png";
 import case_4 from "../../public/Item/Cases/case_lucky.png";
+import button_bg from "../../public/Item/Button/buy_case_button.png";
 
 interface CaseItemProps {
   opened: string;
@@ -65,8 +66,9 @@ const CaseItem: React.FC<CaseItemProps> = ({
         </div>
         <div className="pt-4">Mock data</div>
         <Link
+          style={{ backgroundImage: `url(${button_bg})` }}
           to={linkTo}
-          className="2xl:text-[20px] lg:text-[12px] 2xl:mt-12 text-white bg-[url('../../public/Item/Button/buy_case_button.png')] lg:mt-[15px] bg-cover lg:pt-[7px] flex items-center justify-center lg:pb-[6px] lg:px-8 2xl:px-3 2xl:pt-[10px] 2xl:pb-4"
+          className="2xl:text-[20px] lg:text-[12px] 2xl:mt-12 text-white lg:mt-[15px] bg-cover lg:pt-[7px] flex items-center justify-center lg:pb-[6px] lg:px-8 2xl:px-3 2xl:pt-[10px] 2xl:pb-4"
         >
           {price}
         </Link>
