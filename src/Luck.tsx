@@ -15,7 +15,7 @@ const Luck = () => {
           </p>
         </div>
         <Button
-          size="w-[calc(100%+10px)] h-[calc(100%-16px)] aspect-[372/82] max-w-none"
+          size=" aspect-[372/82] max-w-none"
           className="pt-12 text-[26px]"
           to="/case"
           text="Continue"
