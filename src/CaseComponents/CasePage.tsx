@@ -33,8 +33,8 @@ const CasePage: React.FC = () => {
   ];
 
   return (
-    <div className="relative bg-cover  flex flex-col items-center justify-end">
-      <div className="flex flex-col z-20 gap-16 items-center">
+    <div className="relative bg-cover bg-[#150921] lg:bg-inherit flex flex-col items-center justify-end">
+      <div className="flex flex-col z-20 gap-16 items-center h-screen lg:h-full overflow-auto">
         <div className="flex justify-start items-center text-white w-full xl:pl-12 2xl:pl-16 sm:pl-9">
           <div
             style={{ backgroundImage: `url(${bg_for_button})` }}
@@ -55,7 +55,8 @@ const CasePage: React.FC = () => {
             />
           </div>
         </div>
-        <div className="lg:flex lg:flex-row gap-6 px-9 flex flex-col">
+        <img className="w-[182px] h-[94px] lg:hidden block" src="../../public/Item/Cases/MobileCases/mobile_text.png" alt="text" />
+        <div className="lg:flex lg:flex-row gap-3 lg:gap-6 px-0 lg:px-9 flex flex-col">
           {cases.map((caseItem, index) => (
             <CaseItem key={index} {...caseItem} />
           ))}
