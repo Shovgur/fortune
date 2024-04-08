@@ -1,7 +1,8 @@
 import StaticWheel from './components/ui/wheel/StaticWheel';
 import SpinButton from './components/ui/wheel/SpinButton';
-import { useRef, useState } from 'react';
-import prizes from "../public/prizes.png"
+import prizes from '../public/prizes.png';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import WinWindow from './WinWindow';
 
 const lots = [
   {
@@ -42,9 +43,13 @@ const lots = [
   },
 ];
 
+type Unpacked<T> = T extends (infer U)[] ? U : T;
+
 const DialogWhell = () => {
   const wheelRef = useRef<HTMLImageElement>(null);
   const [deg, setDeg] = useState(0);
+  const [winner, setWinner] = useState<Unpacked<typeof lots> | null>(null);
+  const [winWindowOpen, setWinWindowOpen] = useState(false);
 
   function spin() {
     if (!wheelRef.current) return;
@@ -53,6 +58,7 @@ const DialogWhell = () => {
 
     const winLotIndex = Math.floor(randomItemDeg / 30);
     console.log(`winner: ${lots[winLotIndex].title}`);
+    setWinner(lots[winLotIndex]);
 
     // - 15 because the wheel starts rotating from the center of 50 free spins lot
     // 360 * 14 means 14 more rotations
@@ -60,8 +66,25 @@ const DialogWhell = () => {
     setDeg(deg);
   }
 
-  return (
-    <div className="bg-[url('../public/fortune_wheel_bg.png')] bg-cover py-9 w-[1112px] h-[736px] flex flex-col items-center justify-end">
+  const openWinWindow = useCallback(() => {
+    setTimeout(() => {
+      setWinWindowOpen(true);
+    }, 1000);
+  }, []);
+
+  useEffect(() => {
+    const wheel = wheelRef.current;
+    wheel?.addEventListener('transitionend', openWinWindow);
+
+    return () => {
+      wheel?.removeEventListener('transitionend', openWinWindow);
+    };
+  }, [openWinWindow]);
+
+  return winWindowOpen && winner ? (
+    <WinWindow winner={winner} />
+  ) : (
+    <div className="bg-[url('../public/fortune_wheel_bg.png')] bg-center bg-cover py-9 w-[70vw] h-[940px] max-h-[calc(100vh-60px)] flex flex-col items-center justify-end rounded-[24px]">
       <div className="relative w-[auto] h-[80%] ">
         <img
           ref={wheelRef}
@@ -83,7 +106,7 @@ const DialogWhell = () => {
         </div>
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="relative w-[140px] h-[158px]">
-            <SpinButton onClick={spin} />
+            <SpinButton deg={deg} onClick={spin} />
           </div>
         </div>
       </div>
