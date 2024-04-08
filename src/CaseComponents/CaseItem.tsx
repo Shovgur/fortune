@@ -10,6 +10,10 @@ import dollar_icon from "../../public/icons/dollar_icon.svg";
 import arrow_up from "../../public/icons/arrow_up.svg";
 import box_icon from "../../public/icons/box_icon.svg";
 import girl_icon from "../../public/icons/girl_icon.svg";
+import case_1_mob from "../../public/Item/Cases/MobileCases/case_champion_mob.png";
+import case_2_mob from "../../public/Item/Cases/MobileCases/case_diamond_mob.png";
+import case_3_mob from "../../public/Item/Cases/MobileCases/case_lucky_mob.png";
+import case_4_mob from "../../public/Item/Cases/MobileCases/case_whell_mob.png";
 
 interface CaseItemProps {
   opened: string;
@@ -47,9 +51,31 @@ const CaseItem: React.FC<CaseItemProps> = ({
       caseImage = case_2;
   }
 
+  let mobileBackground;
+  switch (image) {
+    case "case_champion":
+      mobileBackground = case_1_mob;
+      break;
+    case "case_diamond":
+      mobileBackground = case_2_mob;
+      break;
+    case "case_lucky":
+      mobileBackground = case_3_mob;
+      break;
+    case "case_wheel":
+      mobileBackground = case_4_mob;
+      break;
+    default:
+      mobileBackground = case_2_mob;
+  }
+
+  const isMobile = window.innerWidth <= 1024;
+
   return (
     <div
-      style={{ backgroundImage: `url(${case_bg})` }}
+      style={{
+        backgroundImage: `url(${isMobile ? mobileBackground : case_bg})`,
+      }}
       className={` 2xl:w-[288px] lg:w-[165px] w-[358px] h-[182px] lg:h-[280px] 2xl:h-[486px] bg-cover`}
     >
       <div className="flex flex-col 2xl:px-4 2xl:pt-6 lg:pt-4 lg:px-3">

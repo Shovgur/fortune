@@ -38,7 +38,7 @@ const CasePage: React.FC = () => {
         <div className="flex justify-start items-center text-white w-full xl:pl-12 2xl:pl-16 sm:pl-9">
           <div
             style={{ backgroundImage: `url(${bg_for_button})` }}
-            className="flex flex-col text-center z-50 bg-cover 2xl:h-[194px] 2xl:w-[369px] sm:h-[137px] sm:w-[260px] items-center justify-center 2xl:py-6"
+            className="lg:flex flex-col hidden text-center z-50 bg-cover 2xl:h-[194px] 2xl:w-[369px] sm:h-[137px] sm:w-[260px] items-center justify-center 2xl:py-6"
           >
             <p className="text-[20px] font-semibold 2xl:leading-8 xl:leading-6 sm:text-[16px] sm:leading-5">
               Get Free Cases
@@ -62,7 +62,7 @@ const CasePage: React.FC = () => {
         </div>
       </div>
       <img
-        className="absolute z-10 top-1/2 -translate-y-1/2"
+        className="absolute hidden lg:block z-10 top-1/2 -translate-y-1/2"
         src={cases_bg}
         alt=""
       />
