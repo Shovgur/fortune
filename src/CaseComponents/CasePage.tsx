@@ -1,6 +1,9 @@
 import React from "react";
 import CaseItem from "./CaseItem";
 import cases_bg from "../../public/Cases_bg.png";
+import Button from "@/Button";
+import bg_subscribe from "./../../public/Item/Button/subscribe_bg_purple.png";
+import bg_for_button from "../../public/Item/ bg_for_button.png";
 const CasePage: React.FC = () => {
   const cases = [
     {
@@ -32,6 +35,26 @@ const CasePage: React.FC = () => {
   return (
     <div className="relative bg-cover  flex flex-col items-center justify-end">
       <div className="flex flex-col z-20 gap-16 items-center">
+        <div className="flex justify-start items-center text-white w-full xl:pl-12 2xl:pl-16 sm:pl-9">
+          <div
+            style={{ backgroundImage: `url(${bg_for_button})` }}
+            className="flex flex-col text-center z-50 bg-cover 2xl:h-[194px] 2xl:w-[369px] sm:h-[137px] sm:w-[260px] items-center justify-center 2xl:py-6"
+          >
+            <p className="text-[20px] font-semibold 2xl:leading-8 xl:leading-6 sm:text-[16px] sm:leading-5">
+              Get Free Cases
+            </p>
+            <span className="2xl:text-[16px] xl:text-[12px] sm:text-[10px] text-[#B5CEE2]">
+              Subscribe to get 10 free cases every day
+            </span>
+            <Button
+              size="2xl:w-[280px] 2xl:h-[68px] xl:w-[214px] xl:h-[52px] sm:w-[164px] sm:h-[40px] aspect-[372/82] max-w-none"
+              className="2xl:pt-[23px] 2xl:text-[20px] sm:pt-4 sm:text-[12px]"
+              imgSrc={bg_subscribe}
+              text="Subscribe"
+              to="/"
+            />
+          </div>
+        </div>
         <div className="lg:flex lg:flex-row gap-6 px-9 flex flex-col">
           {cases.map((caseItem, index) => (
             <CaseItem key={index} {...caseItem} />

@@ -2,6 +2,7 @@ import Button from "./Button";
 import your_luck from "../public/Try-your_luck.png";
 import perk_1 from "../public/Item_perk_1.svg";
 import perk_2 from "../public/Item_perk_2.svg";
+import continue_bg from "../public/Item/Button/continue_bg.png";
 
 const Luck = () => {
   return (
@@ -13,7 +14,13 @@ const Luck = () => {
             Get a great chance to win a valuable prize
           </p>
         </div>
-        <Button />
+        <Button
+          size="w-[calc(100%+10px)] h-[calc(100%-16px)] aspect-[372/82] max-w-none"
+          className="pt-12 text-[26px]"
+          to="/case"
+          text="Continue"
+          imgSrc={continue_bg}
+        />
       </div>
       <img
         className="absolute lg:top-[77px] lg:left-[-38px]"

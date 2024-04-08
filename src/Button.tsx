@@ -1,25 +1,30 @@
+import React from "react";
 import { Link } from "react-router-dom";
-import btn_bg from "../public/btn-bg.png";
-const Button = () => {
+
+interface ButtonProps {
+  text: string;
+  imgSrc: string;
+  to: string;
+  className?: string;
+  size?: string;
+}
+
+const Button: React.FC<ButtonProps> = ({ text, imgSrc, to, className,size }) => {
   return (
-    <div className="text-center pt-12">
+    <div className={className}>
       <Link
-        to="/case"
-        className="relative flex cursor-pointer items-center justify-center text-[26px] text-white w-[368px] h-[98px]"
+        to={to}
+        className="relative flex cursor-pointer items-center justify-center text-white"
       >
-        <div className="skewed absolute left-0  top-0 w-full h-full">
-          <div className="absolute left-0 top-0 w-full h-full bg-gradient-gold p-1 rounded-[14px]" />
-          <div className="bg-gradient-green rounded-[10px] py-3 px-5 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-1/2 w-[calc(100%-8px)] h-[calc(100%-8px)]" />
-        </div>
         <img
-          className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 w-[calc(100%+10px)] h-[calc(100%-16px)] aspect-[372/82] max-w-none"
-          src={btn_bg}
+          className={size}
+          src={imgSrc}
           width={380}
           height={82}
           alt=""
         />
-        <span className="relative inline-block py-4 px-8 text-shadow">
-          Continue
+        <span className=" absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2  inline-block py-4 px-8 text-shadow">
+          {text}
         </span>
       </Link>
     </div>
