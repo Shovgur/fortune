@@ -1,4 +1,4 @@
-import Button from './Button';
+import Button from "./Button";
 
 type Props = {
   winner: {
@@ -13,14 +13,14 @@ export default function WinWindow({ winner }: Props) {
         <div className="relative mt-10 flex justify-center">
           <img
             className="absolute top-1/2 left-1/2 translate-y-[calc(-50%+110px)] -translate-x-1/2"
-            src={'/win-bg-mask.png'}
+            src={"/win-bg-mask.png"}
             alt=""
           />
           <img
             className="relative"
             width={316}
             height={316}
-            src={'/wheel_prize.png'}
+            src={"/wheel_prize.png"}
             alt=""
           />
         </div>
@@ -28,7 +28,7 @@ export default function WinWindow({ winner }: Props) {
           <p>{winner.title}</p>
         </div>
         <div className="flex justify-center">
-          <Button />
+          <Button to="/" />
         </div>
       </div>
     </div>

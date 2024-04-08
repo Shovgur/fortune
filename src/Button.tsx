@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 interface ButtonProps {
-  text: string;
-  imgSrc: string;
+  text?: string;
+  imgSrc?: string;
   to: string;
   className?: string;
   size?: string;
