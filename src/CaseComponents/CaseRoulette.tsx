@@ -112,8 +112,8 @@ const McRoulette = ({
               </div>
             </div>
             <div className="flex flex-col pl-[26px]">
-              <p className="text-[#897DAA]">Opened:</p>
-              <div className="flex">
+              <p className="text-[#897DAA]">Prize type:</p>
+              <div className="flex gap-2">
                 <img src={dollar_icon} alt="dollar_icon" />
                 <img src={arrow_up} alt="arrow_up_icon" />
                 <img src={box_icon} alt="box_icon" />
