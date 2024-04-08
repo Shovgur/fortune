@@ -6,6 +6,10 @@ import case_3 from "../../public/Item/Cases/case_wheel.png";
 import case_bg from "../../public/Item/case_bg_1.png";
 import case_4 from "../../public/Item/Cases/case_lucky.png";
 import button_bg from "../../public/Item/Button/buy_case_button.png";
+import dollar_icon from "../../public/icons/dollar_icon.svg";
+import arrow_up from "../../public/icons/arrow_up.svg";
+import box_icon from "../../public/icons/box_icon.svg";
+import girl_icon from "../../public/icons/girl_icon.svg";
 
 interface CaseItemProps {
   opened: string;
@@ -64,7 +68,28 @@ const CaseItem: React.FC<CaseItemProps> = ({
             The case contains:
           </p>
         </div>
-        <div className="pt-4">Mock data</div>
+        <div className="flex gap-2 pt-4">
+          <img
+            className="2xl:w-12 2xl:h-12 md:w-7 md:h-7"
+            src={dollar_icon}
+            alt="dollar_icon"
+          />
+          <img
+            className="2xl:w-12 2xl:h-12 md:w-7 md:h-7"
+            src={arrow_up}
+            alt="arrow_up_icon"
+          />
+          <img
+            className="2xl:w-12 2xl:h-12 md:w-7 md:h-7"
+            src={box_icon}
+            alt="box_icon"
+          />
+          <img
+            className="2xl:w-12 2xl:h-12 md:w-7 md:h-7"
+            src={girl_icon}
+            alt="girl_icon"
+          />
+        </div>
         <Link
           style={{ backgroundImage: `url(${button_bg})` }}
           to={linkTo}
