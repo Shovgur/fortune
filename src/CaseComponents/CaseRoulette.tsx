@@ -1,15 +1,15 @@
-import { useRef, useState } from "react";
-import RouletteItem from "./CaseRouletteItem";
-import { Roulette, weaponAttributes } from "../../roulette.clases";
-import RouletteControls from "./RouletteControls";
-import dollar_icon from "../../public/icons/dollar_icon.svg";
-import arrow_up from "../../public/icons/arrow_up.svg";
-import box_icon from "../../public/icons/box_icon.svg";
-import girl_icon from "../../public/icons/girl_icon.svg";
-import free_prizes from "../../public/free_prizes.png";
-import { Link } from "react-router-dom";
-import back_button from "../../public/Item/Button/back_button.png"
-import close_button from "../../public/Item/Button/close_button.png"
+import { useRef, useState } from 'react';
+import RouletteItem from './CaseRouletteItem';
+import { Roulette, weaponAttributes } from '../../roulette.clases';
+import RouletteControls from './RouletteControls';
+import dollar_icon from '../../public/icons/dollar_icon.svg';
+import arrow_up from '../../public/icons/arrow_up.svg';
+import box_icon from '../../public/icons/box_icon.svg';
+import girl_icon from '../../public/icons/girl_icon.svg';
+import free_prizes from '../../public/free_prizes.png';
+import { Link } from 'react-router-dom';
+import back_button from '../../public/Item/Button/back_button.png';
+import close_button from '../../public/Item/Button/close_button.png';
 
 interface RouletteElementParams {
   chip: weaponAttributes[];
@@ -39,12 +39,12 @@ const McRoulette = ({
   }
 
   function prepare() {
-    chipRef.current!.style.transition = "none";
-    chipRef.current!.style.left = "0px";
+    chipRef.current!.style.transition = 'none';
+    chipRef.current!.style.left = '0px';
   }
 
   function load() {
-    let winner = chip[Math.floor(Math.random() * chip.length)];
+    const winner = chip[Math.floor(Math.random() * chip.length)];
 
     const roulette = new Roulette({
       winner,

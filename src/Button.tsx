@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import btn_bg from "../public/btn-bg.png";
+import { Link } from 'react-router-dom';
+import btn_bg from '../public/btn-bg.png';
 const Button = () => {
   return (
     <div className="text-center pt-12">

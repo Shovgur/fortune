@@ -5,8 +5,9 @@
 * {
   box-sizing: border-box;
   padding: 0;
+
   margin: 0;
-  font-family: "Outfit", sans-serif;
+  font-family: 'Casino', sans-serif;
 }
 
 body {
@@ -15,9 +16,10 @@ body {
   align-items: center;
   background-color: black;
   height: 100vh;
+  overflow: hidden;
 }
 .background-luck {
-  background: url("LuckBackground.png");
+  background: url('LuckBackground.png');
 }
 
 #canvas {
@@ -76,4 +78,3 @@ body {
   top: 0;
   right: -30px;
 } */
-

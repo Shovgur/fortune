@@ -1,8 +1,16 @@
-export default function SpinButton({ onClick }: { onClick: () => void }) {
+export default function SpinButton({
+  onClick,
+  deg,
+}: {
+  onClick: () => void;
+  deg: number;
+}) {
   return (
     <>
       <svg
-        className="w-full h-full cursor-pointer rounded-full"
+        className={`w-full h-full cursor-pointer rounded-full ${
+          deg ? 'pointer-events-none cursor-auto' : ''
+        }`}
         width="190"
         height="214"
         viewBox="0 0 190 214"
