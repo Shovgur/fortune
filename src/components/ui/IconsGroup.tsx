@@ -5,7 +5,7 @@ import girl_icon from "../../../public/icons/girl_icon.svg";
 
 const IconsGroup = () => {
   return (
-    <div className="flex gap-1 lg:gap-2 pt-4">
+    <div className="flex gap-1 lg:gap-2 lg:pt-4">
       <img
         className="2xl:w-12 2xl:h-12 md:w-7 md:h-7 w-8 h-8"
         src={dollar_icon}

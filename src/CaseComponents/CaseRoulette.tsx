@@ -1,15 +1,16 @@
-import { useRef, useState } from 'react';
-import RouletteItem from './CaseRouletteItem';
-import { Roulette, weaponAttributes } from '../../roulette.clases';
-import RouletteControls from './RouletteControls';
-import dollar_icon from '../../public/icons/dollar_icon.svg';
-import arrow_up from '../../public/icons/arrow_up.svg';
-import box_icon from '../../public/icons/box_icon.svg';
-import girl_icon from '../../public/icons/girl_icon.svg';
-import free_prizes from '../../public/free_prizes.png';
-import { Link } from 'react-router-dom';
-import back_button from '../../public/Item/Button/back_button.png';
-import close_button from '../../public/Item/Button/close_button.png';
+import { useRef, useState } from "react";
+import RouletteItem from "./CaseRouletteItem";
+import { Roulette, weaponAttributes } from "../../roulette.clases";
+import RouletteControls from "./RouletteControls";
+import dollar_icon from "../../public/icons/dollar_icon.svg";
+import arrow_up from "../../public/icons/arrow_up.svg";
+import box_icon from "../../public/icons/box_icon.svg";
+import girl_icon from "../../public/icons/girl_icon.svg";
+import free_prizes from "../../public/free_prizes.png";
+import { Link } from "react-router-dom";
+import back_button from "../../public/Item/Button/back_button.png";
+import close_button from "../../public/Item/Button/close_button.png";
+import IconsGroup from "@/components/ui/IconsGroup";
 
 interface RouletteElementParams {
   chip: weaponAttributes[];
@@ -39,8 +40,8 @@ const McRoulette = ({
   }
 
   function prepare() {
-    chipRef.current!.style.transition = 'none';
-    chipRef.current!.style.left = '0px';
+    chipRef.current!.style.transition = "none";
+    chipRef.current!.style.left = "0px";
   }
 
   function load() {
@@ -77,16 +78,19 @@ const McRoulette = ({
   }
 
   return (
-    <div className="lg:w-[1112px] pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/case_roulette_bg.png')] bg-cover ">
+    <div className="lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-none lg:bg-[url('../public/case_roulette_bg.png')] bg-cover ">
       <div className=" max-h-8 flex justify-between w-full 2xl:px-6">
         <Link className="flex items-start justify-start max-h-8" to="/case">
           <img
-            className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
+            className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10 w-8 h-8"
             src={back_button}
             alt="back_button"
           />
         </Link>
-        <Link className="flex items-start justify-start max-h-8" to="/case">
+        <Link
+          className="lg:flex hidden items-start justify-start max-h-8"
+          to="/case"
+        >
           <img
             className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
             src={close_button}
@@ -95,7 +99,7 @@ const McRoulette = ({
         </Link>
       </div>
 
-      <div className=" flex items-start justify-between w-full px-[100px]">
+      <div className=" flex items-start justify-between w-full px-6 lg:px-[100px]">
         <div className="flex flex-col gap-8">
           <div className=" text-3xl text-white">
             <p>Champion Case</p>
@@ -105,25 +109,20 @@ const McRoulette = ({
               <p className="text-[#897DAA]">Opened:</p>
               <p className="text-white">200 351</p>
             </div>
-            <div className="flex flex-col gap-3  px-[26px] border-r border-opacity-70 border-[#3F305B]">
+            <div className="flex flex-col gap-3 px-4  lg:px-[26px] border-r border-opacity-70 border-[#3F305B]">
               <div className="flex flex-col gap-3">
                 <p className="text-[#897DAA]">Top win:</p>
                 <p className="text-white">536 259 $</p>
               </div>
             </div>
-            <div className="flex flex-col pl-[26px]">
+            <div className="flex flex-col pl-4 lg:pl-[26px]">
               <p className="text-[#897DAA]">Prize type:</p>
-              <div className="flex gap-2">
-                <img src={dollar_icon} alt="dollar_icon" />
-                <img src={arrow_up} alt="arrow_up_icon" />
-                <img src={box_icon} alt="box_icon" />
-                <img src={girl_icon} alt="girl_icon" />
-              </div>
+              <IconsGroup />
             </div>
           </div>
         </div>
         <img
-          className="lg:w-[271px] lg:h-[204px]"
+          className="lg:w-[271px] lg:h-[204px] hidden lg:block"
           src={free_prizes}
           alt="free_prize"
         />
