@@ -4,6 +4,7 @@ import cases_bg from "../../public/Cases_bg.png";
 import Button from "@/Button";
 import bg_subscribe from "./../../public/Item/Button/subscribe_bg_purple.png";
 import bg_for_button from "../../public/Item/ bg_for_button.png";
+import mobile_text from "../../public/Item/Cases/MobileCases/mobile_text.png"
 const CasePage: React.FC = () => {
   const cases = [
     {
@@ -55,7 +56,7 @@ const CasePage: React.FC = () => {
             />
           </div>
         </div>
-        <img className="w-[182px] h-[94px] lg:hidden block" src="../../public/Item/Cases/MobileCases/mobile_text.png" alt="text" />
+        <img className="w-[182px] h-[94px] lg:hidden block" src={mobile_text} alt="text" />
         <div className="lg:flex lg:flex-row gap-3 lg:gap-6 px-0 lg:px-9 flex flex-col">
           {cases.map((caseItem, index) => (
             <CaseItem key={index} {...caseItem} />
