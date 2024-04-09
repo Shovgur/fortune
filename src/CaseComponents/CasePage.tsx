@@ -1,41 +1,42 @@
-import React from "react";
-import CaseItem from "./CaseItem";
-import cases_bg from "../../public/Cases_bg.png";
-import Button from "@/Button";
-import bg_subscribe from "./../../public/Item/Button/subscribe_bg_purple.png";
-import bg_for_button from "../../public/Item/ bg_for_button.png";
-import mobile_text from "../../public/Item/Cases/MobileCases/mobile_text.png"
-const CasePage: React.FC = () => {
-  const cases = [
-    {
-      opened: "200 351",
-      price: "7,99$",
-      image: "case_champion",
-      caseName: "Champion Case",
-    },
-    {
-      opened: "13 167",
-      price: "13,99$",
-      image: "case_diamond",
-      caseName: "Diamond Case",
-    },
-    {
-      opened: "45 015",
-      price: "22,99$",
-      image: "case_wheel",
-      caseName: "Money Wheel Case",
-    },
-    {
-      opened: "690 000",
-      price: "5,99$",
-      image: "case_lucky",
-      caseName: "Lucky Case",
-    },
-  ];
+import React from 'react';
+import CaseItem from './CaseItem';
+import cases_bg from '../../public/Cases_bg.png';
+import Button from '@/Button';
+import bg_subscribe from './../../public/Item/Button/subscribe_bg_purple.png';
+import bg_for_button from '../../public/Item/ bg_for_button.png';
+import mobile_text from '../../public/Item/Cases/MobileCases/mobile_text.png';
 
+const cases = [
+  {
+    opened: '200 351',
+    price: '7,99$',
+    image: 'case_champion',
+    caseName: 'Champion Case',
+  },
+  {
+    opened: '13 167',
+    price: '13,99$',
+    image: 'case_diamond',
+    caseName: 'Diamond Case',
+  },
+  {
+    opened: '45 015',
+    price: '22,99$',
+    image: 'case_wheel',
+    caseName: 'Money Wheel Case',
+  },
+  {
+    opened: '690 000',
+    price: '5,99$',
+    image: 'case_lucky',
+    caseName: 'Lucky Case',
+  },
+];
+
+const CasePage: React.FC = () => {
   return (
     <div className="relative bg-cover bg-[#150921] lg:bg-inherit flex flex-col items-center justify-end">
-      <div className="flex flex-col z-20 gap-16 items-center h-screen lg:h-full overflow-auto">
+      <div className="flex flex-col z-20 gap-4 lg:gap-16 items-center h-screen lg:h-full overflow-auto">
         <div className="flex justify-start items-center text-white w-full xl:pl-12 2xl:pl-16 sm:pl-9">
           <div
             style={{ backgroundImage: `url(${bg_for_button})` }}
@@ -56,8 +57,12 @@ const CasePage: React.FC = () => {
             />
           </div>
         </div>
-        <img className="w-[182px] h-[94px] lg:hidden block" src={mobile_text} alt="text" />
-        <div className="lg:flex lg:flex-row gap-3 lg:gap-6 px-0 lg:px-9 flex flex-col">
+        <img
+          className="w-[182px] h-[94px] lg:hidden block"
+          src={mobile_text}
+          alt="text"
+        />
+        <div className="lg:flex lg:flex-row gap-3 lg:gap-6 px-0 lg:px-9 flex flex-col pb-14 lg:pb-0">
           {cases.map((caseItem, index) => (
             <CaseItem key={index} {...caseItem} />
           ))}
