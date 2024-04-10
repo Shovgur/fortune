@@ -123,7 +123,7 @@ const McRoulette = ({
           alt="free_prize"
         />
       </div>
-      <div className="w-full overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-3">
+      <div className="lg:w-full w-screen overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-3">
         <div className="z-[1100] absolute top-0 left-1/2 h-[210px] w-[3px] bg-[url('../public/icons/win_devider.svg')]" />
         <div
           ref={chipRef}

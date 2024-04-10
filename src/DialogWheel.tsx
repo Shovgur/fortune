@@ -88,7 +88,7 @@ const DialogWhell = () => {
     <WinWindow winner={winner} />
   ) : (
     <div className="bg-[url('../public/fortune_wheel_bg.png')] bg-center bg-cover py-9 w-[70vw] h-[940px] max-h-[calc(100vh-60px)] flex flex-col items-center justify-end rounded-[24px]">
-      <div className="flex w-full pt-9 pl-9">
+      <div className="lg:flex w-full pt-9 hidden pl-9">
         <div
           style={{ backgroundImage: `url(${bg_for_button})` }}
           className="lg:flex flex-col hidden text-center z-50 bg-cover 2xl:h-[194px] 2xl:w-[369px] sm:h-[137px] sm:w-[273px] items-center justify-center 2xl:py-6"
