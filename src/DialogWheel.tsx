@@ -1,45 +1,48 @@
-import StaticWheel from './components/ui/wheel/StaticWheel';
-import SpinButton from './components/ui/wheel/SpinButton';
-import prizes from '../public/prizes.png';
-import { useCallback, useEffect, useRef, useState } from 'react';
-import WinWindow from './WinWindow';
+import StaticWheel from "./components/ui/wheel/StaticWheel";
+import SpinButton from "./components/ui/wheel/SpinButton";
+import prizes from "../public/prizes.png";
+import { useCallback, useEffect, useRef, useState } from "react";
+import WinWindow from "./WinWindow";
+import Button from "./Button";
+import bg_for_button from "../public/Item/bg_for_button_whell.png";
+import bg_subscribe from "../public/Item/Button/subscribe_bg_purple.png";
 
 const lots = [
   {
-    title: '50 free spins',
+    title: "50 free spins",
   },
   {
-    title: 'x1',
+    title: "x1",
   },
   {
-    title: 'x2 money',
+    title: "x2 money",
   },
   {
-    title: '100 free spins',
+    title: "100 free spins",
   },
   {
-    title: 'free money',
+    title: "free money",
   },
   {
-    title: 'bet',
+    title: "bet",
   },
   {
-    title: 'x1',
+    title: "x1",
   },
   {
-    title: 'jackpot',
+    title: "jackpot",
   },
   {
-    title: 'x3 money',
+    title: "x3 money",
   },
   {
-    title: 'free money',
+    title: "free money",
   },
   {
-    title: '10 free spins',
+    title: "10 free spins",
   },
   {
-    title: 'x3',
+    title: "x3",
   },
 ];
 
@@ -74,10 +77,10 @@ const DialogWhell = () => {
 
   useEffect(() => {
     const wheel = wheelRef.current;
-    wheel?.addEventListener('transitionend', openWinWindow);
+    wheel?.addEventListener("transitionend", openWinWindow);
 
     return () => {
-      wheel?.removeEventListener('transitionend', openWinWindow);
+      wheel?.removeEventListener("transitionend", openWinWindow);
     };
   }, [openWinWindow]);
 
@@ -85,10 +88,30 @@ const DialogWhell = () => {
     <WinWindow winner={winner} />
   ) : (
     <div className="bg-[url('../public/fortune_wheel_bg.png')] bg-center bg-cover py-9 w-[70vw] h-[940px] max-h-[calc(100vh-60px)] flex flex-col items-center justify-end rounded-[24px]">
-      <div className="relative w-[auto] h-[80%] ">
+      <div className="flex w-full pt-9 pl-9">
+        <div
+          style={{ backgroundImage: `url(${bg_for_button})` }}
+          className="lg:flex flex-col hidden text-center z-50 bg-cover 2xl:h-[194px] 2xl:w-[369px] sm:h-[137px] sm:w-[273px] items-center justify-center 2xl:py-6"
+        >
+          <p className="text-[20px] font-semibold 2xl:leading-8 xl:leading-6 sm:text-[16px] sm:leading-5 text-white">
+            Get Free Spins
+          </p>
+          <span className="2xl:text-[16px] xl:text-[12px] sm:text-[10px] text-[#B5CEE2]">
+            Subscribe to get 10 free cases every day
+          </span>
+          <Button
+            size="2xl:w-[280px] 2xl:h-[68px] xl:w-[214px] xl:h-[52px] sm:w-[164px] sm:h-[40px] aspect-[372/82] max-w-none"
+            className="2xl:pt-[23px] 2xl:text-[20px] sm:pt-4 sm:text-[12px]"
+            imgSrc={bg_subscribe}
+            text="Subscribe"
+            to="/"
+          />
+        </div>
+      </div>
+      <div className="relative w-[auto] h-auto lg:h-[80%] max-h-[358px] lg:max-h-none ">
         <img
           ref={wheelRef}
-          className="lg:w-[calc(100%-13px)] lg:h-[calc(100%-13px)] h-[calc(100%-111px)] w-[calc(100%-7px)] absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
+          className="w-[calc(100%-13px)] h-[calc(100%-13px)]  absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
           src={prizes}
           width={684}
           height={684}
