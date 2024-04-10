@@ -74,7 +74,7 @@ const McRoulette = ({
   }
 
   return (
-    <div className="lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-none lg:bg-[url('../public/case_roulette_bg.png')] bg-cover ">
+    <div className="lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg_mobile.png')]  lg:bg-[url('../public/case_roulette_bg.png')] bg-cover ">
       <div className=" max-h-8 flex justify-between w-full 2xl:px-6">
         <Link className="flex items-start justify-start max-h-8" to="/case">
           <img
@@ -97,7 +97,7 @@ const McRoulette = ({
 
       <div className=" flex items-start justify-between w-full px-6 lg:px-[100px]">
         <div className="flex flex-col gap-8">
-          <div className=" text-3xl text-white">
+          <div className=" lg:text-4xl text-white text-[32px]">
             <p>Champion Case</p>
           </div>
           <div className="flex">
@@ -124,10 +124,10 @@ const McRoulette = ({
         />
       </div>
       <div className="w-full overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-3">
-        <div className="z-[1100] absolute top-0 left-1/2 h-full w-[3px] bg-[#f74e7f]"></div>
+        <div className="z-[1100] absolute top-0 left-1/2 h-[210px] w-[3px] bg-[url('../public/icons/win_devider.svg')]" />
         <div
           ref={chipRef}
-          className="left-0 relative flex items-center  h-full whitespace-nowrap"
+          className="left-0 relative flex items-center h-[186px] lg:h-full whitespace-nowrap"
           onTransitionEnd={transitionEndHandler}
         >
           {roulettechip.map((_, i) => {
