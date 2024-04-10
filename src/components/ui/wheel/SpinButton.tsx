@@ -61,7 +61,7 @@ export default function SpinButton({
           </linearGradient>
         </defs>
       </svg>
-      <span className="absolute inline-block top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%-6px)] uppercase font-black text-[40px] bg-[#C7984A] spin-shadow pointer-events-none">
+      <span className="absolute inline-block top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%-6px)] uppercase font-black text-[24px] lg:text-[40px] bg-[#C7984A] spin-shadow pointer-events-none">
         SPIN
       </span>
     </>

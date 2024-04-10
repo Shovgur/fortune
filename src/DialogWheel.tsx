@@ -88,7 +88,7 @@ const DialogWhell = () => {
       <div className="relative w-[auto] h-[80%] ">
         <img
           ref={wheelRef}
-          className="w-[calc(100%-13px)] h-[calc(100%-13px)] absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
+          className="lg:w-[calc(100%-13px)] lg:h-[calc(100%-13px)] h-[calc(100%-111px)] w-[calc(100%-7px)] absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
           src={prizes}
           width={684}
           height={684}
@@ -105,7 +105,7 @@ const DialogWhell = () => {
           <StaticWheel />
         </div>
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="relative w-[140px] h-[158px]">
+          <div className="relative w-[100px] h-[100px] lg:w-[140px] lg:h-[158px]">
             <SpinButton deg={deg} onClick={spin} />
           </div>
         </div>
