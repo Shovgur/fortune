@@ -1,7 +1,7 @@
 import Luck from './Luck';
 import DialogWheel from './DialogWheel';
 import McRoulette from './CaseComponents/CaseRoulette';
-import peaks from './peaks.json';
+import chips from './chips.json';
 import { Route, Routes } from 'react-router-dom';
 import './index.css';
 import CasePage from './CaseComponents/CasePage';
@@ -17,7 +17,7 @@ function App() {
         path="/luck"
         element={
           <McRoulette
-            chip={peaks}
+            chip={chips}
             chipCount={chipCount}
             transitionDuration={transitionDuration}
           />

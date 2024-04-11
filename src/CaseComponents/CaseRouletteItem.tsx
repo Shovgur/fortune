@@ -1,18 +1,19 @@
+import chip from "/public/chips/chip_1.png";
 interface rouletteItemProps {
   id: number;
-  isLoser: boolean;
 }
 
-const RouletteItem = ({ id, isLoser }: rouletteItemProps) => {
+const RouletteItem = ({ id }: rouletteItemProps) => {
   return (
     <div
       className="w-full h-full flex items-center justify-center"
-      style={isLoser ? { opacity: "0.5" } : { opacity: "1" }}
     >
       <div
-        className="2xl:h-[200px] 2xl:w-[200px] xl:h-[172px] xl:w-[199px] w-[196px] md:w-[197px] h-[166px] flex items-center justify-center relative bg-[url('../public/Perk.png')] bg-cover"
+        className="2xl:h-[242px] 2xl:w-[222px] xl:h-[154px] xl:w-[158px] w-[196px] md:w-[134px] md:h-[154px] flex items-center justify-center relative "
         id={String(id)}
-      ></div>
+      >
+        <img className="2xl:w-[152px] 2xl:h-[152px] w-[96px] h-[96px]" src={chip} alt="chip" />
+      </div>
     </div>
   );
 };

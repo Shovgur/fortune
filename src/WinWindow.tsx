@@ -3,7 +3,9 @@ import continue_bg from "../public/Item/Button/continue_bg.png";
 
 type Props = {
   winner: {
-    title: string;
+    title?: string;
+    chip_name?:string;
+    chip_value?:string
   };
 };
 
@@ -11,7 +13,7 @@ export default function WinWindow({ winner }: Props) {
   return (
     <div className="w-[70vw] h-[940px] max-h-[calc(100vh-60px)] border-4 border-[#362746] rounded-xl">
       <img
-        className="absolute top-1/2 left-1/2 translate-y-[calc(-50%+110px)] -translate-x-1/2"
+        className="absolute h-full top-1/2 left-1/2 translate-y-[calc(-50%+110px)] -translate-x-1/2"
         src={"/win-bg-mask.png"}
         alt=""
       />
@@ -31,7 +33,7 @@ export default function WinWindow({ winner }: Props) {
             src="../public/Item/win_window_text.png"
             alt="win_text"
           />
-          <p>{winner.title}</p>
+          <p>{winner.title || winner.chip_name}</p>
         </div>
         <div className="flex justify-center">
           <Button

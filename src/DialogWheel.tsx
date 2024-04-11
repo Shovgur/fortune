@@ -85,7 +85,7 @@ const DialogWhell = () => {
   }, [openWinWindow]);
 
   return winWindowOpen && winner ? (
-    <WinWindow winner={winner} />
+    <WinWindow winner={{ title: winner.title }} />
   ) : (
     <div className="bg-[url('../public/fortune_wheel_bg.png')] bg-center bg-cover py-9 w-[70vw] h-[940px] max-h-[calc(100vh-60px)] flex flex-col items-center justify-end rounded-[24px]">
       <div className="lg:flex w-full pt-9 hidden pl-9">

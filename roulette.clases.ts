@@ -1,34 +1,34 @@
 import { Ref } from "react";
 
-export interface weaponAttributes {
-  weapon_name: string;
-  skin_name: string;
-  rarity: string;
-  steam_image: string;
+export interface chipsAttributes {
+  chips_name: string;
+  chip_color: string;
+  chip_value: string;
+  chip_win: string;
 }
 
 // КЛАСС ОРУЖИЯ
-export class Weapon {
+export class chips {
   id: number;
-  weapon_name: string;
-  skin_name: string;
-  rarity: string;
-  steam_image: string;
+  chips_name: string;
+  chip_color: string;
+  chip_value: string;
+  chip_win: string;
 
-  constructor(id: number, attrs: weaponAttributes) {
+  constructor(id: number, attrs: chipsAttributes) {
     this.id = id;
 
     // атрибуты с сервера
-    this.weapon_name = attrs.weapon_name;
-    this.skin_name = attrs.skin_name;
-    this.rarity = attrs.rarity;
-    this.steam_image = attrs.steam_image;
+    this.chips_name = attrs.chips_name;
+    this.chip_color = attrs.chip_color;
+    this.chip_value = attrs.chip_value;
+    this.chip_win = attrs.chip_win;
   }
 }
 
 export interface rouletteAttributes {
-  winner: weaponAttributes;
-  chip: weaponAttributes[];
+  winner: chipsAttributes;
+  chip: chipsAttributes[];
 
   rouletteContainerRef: Ref<HTMLElement>;
   chipRef: Ref<HTMLElement>;
@@ -40,16 +40,16 @@ export interface rouletteAttributes {
 
 // КЛАСС РУЛЕТКИ
 export class Roulette {
-  winner: weaponAttributes;
-  allchip: weaponAttributes[];
+  winner: chipsAttributes;
+  allchip: chipsAttributes[];
 
   rouletteWrapper: Ref<HTMLElement>;
-  weaponWrapper: Ref<HTMLElement>;
+  chipsWrapper: Ref<HTMLElement>;
 
-  chip: Weapon[];
+  chip: chips[];
 
   chipCount: number;
-  weaponPrizeId: number;
+  chipsPrizeId: number;
 
   transitionDuration: number;
 
@@ -60,20 +60,15 @@ export class Roulette {
     this.winner = attrs.winner;
     this.allchip = attrs.chip;
 
-    // тут будет всё оружие (оружие-приз + оружие-актёры)
     this.chip = [];
 
-    // родительский DOM-элемент для рулетки
     this.rouletteWrapper = attrs.chipRef;
 
-    // родительский DOM-элемент для DOM-элементов оружия (он вращается)
-    this.weaponWrapper = attrs.chipRef;
+    this.chipsWrapper = attrs.chipRef;
 
-    // общее количество оружия
     this.chipCount = attrs.chipCount || 50;
 
-    // id приза
-    this.weaponPrizeId = this.randomRange(
+    this.chipsPrizeId = this.randomRange(
       this.chipCount / 2,
       this.chipCount - 5
     );
@@ -95,38 +90,31 @@ export class Roulette {
   };
 
   set_chip = () => {
-    let chip: Weapon[] = []; // объявляем массив оружия
-    let weapon_actors_len = this.allchip.length; // количество оружия пришедшее с бд
+    let chip: chips[] = []; 
+    let chips_actors_len = this.allchip.length; 
 
-    const set_weapon_actors = (from_i: number, to_i: number) => {
+    const set_chips_actors = (from_i: number, to_i: number) => {
       let j = 0;
-      const createdchip: Weapon[] = [];
+      const createdchip: chips[] = [];
       for (let i = from_i; i <= to_i; i += 1) {
-        // создаем оружие с индексом i и атрибутами j
-        createdchip.push(new Weapon(i, this.allchip[j]));
-        j = j === weapon_actors_len - 1 ? 0 : j + 1;
+        createdchip.push(new chips(i, this.allchip[j]));
+        j = j === chips_actors_len - 1 ? 0 : j + 1;
       }
       this.shuffle(createdchip);
       return createdchip;
     };
 
-    // нет оружия с бд - ошибка
-    if (weapon_actors_len === 0) {
+    if (chips_actors_len === 0) {
       throw new Error("Ошибка! Нет актёров.");
     }
 
-    /**
-     * сетаем оружия в размере количества
-     *  оружия в рулетке с 0 до id приза
-     */
-    chip = chip.concat(set_weapon_actors(0, this.weaponPrizeId - 1));
 
-    // создаем оружие приз
-    chip[this.weaponPrizeId] = new Weapon(this.weaponPrizeId, this.winner);
+    chip = chip.concat(set_chips_actors(0, this.chipsPrizeId - 1));
 
-    /** сетаем оружия в id приза до конца */
+    chip[this.chipsPrizeId] = new chips(this.chipsPrizeId, this.winner);
+
     chip = chip.concat(
-      set_weapon_actors(this.weaponPrizeId + 1, this.chipCount - 1)
+      set_chips_actors(this.chipsPrizeId + 1, this.chipCount - 1)
     );
     this.chip = chip;
   };
@@ -134,27 +122,27 @@ export class Roulette {
   /** ВРАЩЕНИЕ РУЛЕТКИ
      -----------------------------------------------------------------------------*/
   spin = () => {
-    let el_weapon_width_1_2 = Math.floor(this.itemWidth / 2);
-    let el_weapon_width_1_20 = Math.floor(this.itemWidth / 20);
+    let el_chips_width_1_2 = Math.floor(this.itemWidth / 2);
+    let el_chips_width_1_20 = Math.floor(this.itemWidth / 20);
 
     // рандомная координата остановки
     const randStop =
-      (this.weaponPrizeId - 4) * this.itemWidth +
-      el_weapon_width_1_2 +
-      this.randomRange(el_weapon_width_1_20, 18 * el_weapon_width_1_20);
+      (this.chipsPrizeId - 4) * this.itemWidth +
+      el_chips_width_1_2 +
+      this.randomRange(el_chips_width_1_20, 18 * el_chips_width_1_20);
 
     // анимация теперь через 'transition', а не через 'animation'
     // 'ease-out' -- это плавное замедление рулетки
     // @ts-ignore
-    this.weaponWrapper.current.style.transition = `left ${this.transitionDuration}s ease-out`;
+    this.chipsWrapper.current.style.transition = `left ${this.transitionDuration}s ease-out`;
 
     // немного отложенный старт
     // (ибо нельзя сразу установить css-свойство 'left')
     setTimeout(() => {
       // @ts-ignore
-      this.weaponWrapper!.current.style.left = `-${randStop}px`;
+      this.chipsWrapper!.current.style.left = `-${randStop}px`;
     }, 100);
 
-    return this.weaponPrizeId;
+    return this.chipsPrizeId;
   };
 }
