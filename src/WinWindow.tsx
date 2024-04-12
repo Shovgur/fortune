@@ -20,16 +20,14 @@ export default function WinWindow({ winner }: Props) {
       <div className="bg-[url(../public/win-bg.png)] flex flex-col justify-center items-center bg-center bg-cover w-[70vw] h-[940px] max-h-[calc(100vh-60px)] rounded-[24px] overflow-hidden">
         <div className="relative mt-10 flex justify-center">
           <img
-            className="relative"
-            width={316}
-            height={316}
+            className="relative w-[200px] lg:w-[316px]"
             src={"/public/Item/whell_prize.png"}
             alt=""
           />
         </div>
-        <div className="relative z-10 text-white text-center text-[64px] flex flex-col items-center gap-11 font-bold uppercase">
+        <div className="relative z-10 text-white text-center text-[32px] lg:text-[64px] flex flex-col items-center gap-11 font-bold uppercase">
           <img
-            className="max-w-[421px]"
+            className="lg:max-w-[421px] max-w-[212px]"
             src="../public/Item/win_window_text.png"
             alt="win_text"
           />
@@ -37,8 +35,8 @@ export default function WinWindow({ winner }: Props) {
         </div>
         <div className="flex justify-center">
           <Button
-            size=" aspect-[372/82] max-w-none"
-            className="pt-12 text-[26px]"
+            size=" aspect-[372/82]"
+            className="pt-12 lg:text-[26px] text-[16px]"
             to="/case"
             text="Continue"
             imgSrc={continue_bg}

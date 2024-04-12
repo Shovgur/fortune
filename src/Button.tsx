@@ -22,7 +22,7 @@ const Button: React.FC<ButtonProps> = ({
         to={to}
         className="relative flex cursor-pointer items-center justify-center text-white"
       >
-        <img className={size} src={imgSrc} width={380} height={82} alt="" />
+        <img className={size} src={imgSrc} width={380} height={82} alt="button_img" />
         <span className="absolute left-1/2 top-1/2 -translate-y-1/2 -translate-x-1/2 inline-block py-4 px-8 text-shadow">
           {text}
         </span>
