@@ -11,10 +11,12 @@
 }
 
 body {
-  overflow: auto;
-  width:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: black;
   height: 100vh;
+  overflow: hidden;
 }
 .background-luck {
   background: url('LuckBackground.png');

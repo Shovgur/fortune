@@ -135,7 +135,7 @@ const McRoulette = ({
         </div>
         <div className="lg:w-full w-screen overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-3">
           <div className="z-[1100] absolute top-0 left-1/2 -translate-x-1/2 h-full w-[3px] bg-[url('/public/icons/win_devider.svg')]" />
-          <div className=" absolute top-1/2 left-1/2 2xl:h-[220px] 2xl:w-[220px] lg:w-[134px] lg:h-[134px] w-[166px] h-[166px] -translate-y-1/2  bg-[url(/public/Perk.png)] -translate-x-1/2 bg-cover" />
+          <div className=" absolute top-1/2 left-1/2 2xl:h-[220px] 2xl:w-[220px] lg:w-[134px] lg:h-[134px] -translate-y-1/2  bg-[url(/public/Perk.png)] -translate-x-1/2 bg-cover" />
           <div
             ref={chipRef}
             className="left-0 relative flex items-center h-[186px] lg:h-full whitespace-nowrap"

@@ -35,8 +35,8 @@ const cases = [
 
 const CasePage: React.FC = () => {
   return (
-    <div className="relative bg-cover bg-[#150921] lg:bg-inherit flex flex-col items-center justify-end overflow-auto">
-      <div className="flex flex-col z-20 gap-4 lg:gap-16 items-center h-screen lg:h-full">
+    <div className="relative bg-cover bg-[#150921] lg:bg-inherit flex flex-col items-center justify-end">
+      <div className="flex flex-col z-20 gap-4 lg:gap-16 items-center h-screen lg:h-full overflow-auto">
         <div className="flex justify-start items-center text-white w-full xl:pl-12 2xl:pl-16 sm:pl-9">
           <div
             style={{ backgroundImage: `url(${bg_for_button})` }}
