@@ -1,11 +1,14 @@
 import Button from "./Button";
 import continue_bg from "../public/Item/Button/continue_bg.png";
+import wheel_prize from "..//public/Item/whell_prize.png";
+
+import win_window_text from "../public/Item/win_window_text.png";
 
 type Props = {
   winner: {
     title?: string;
-    chip_name?:string;
-    chip_value?:string
+    chip_name?: string;
+    chip_value?: string;
   };
 };
 
@@ -21,14 +24,14 @@ export default function WinWindow({ winner }: Props) {
         <div className="relative mt-10 flex justify-center">
           <img
             className="relative w-[200px] lg:w-[316px]"
-            src={"/public/Item/whell_prize.png"}
+            src={wheel_prize}
             alt=""
           />
         </div>
         <div className="relative z-10 text-white text-center text-[32px] lg:text-[64px] flex flex-col items-center gap-11 font-bold uppercase">
           <img
             className="lg:max-w-[421px] max-w-[212px]"
-            src="../public/Item/win_window_text.png"
+            src={win_window_text}
             alt="win_text"
           />
           <p>{winner.title || winner.chip_name}</p>
