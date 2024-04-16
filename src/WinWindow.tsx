@@ -13,13 +13,13 @@ type Props = {
 
 export default function WinWindow({ winner }: Props) {
   return (
-    <div className="w-[70vw] h-[940px] max-h-[calc(100vh-60px)] border-4 border-[#362746] rounded-xl">
+    <div className="lg:w-[70vw] w-full h-screen lg:h-[940px] lg:max-h-[calc(100vh-60px)] lg:border-4 border-[#362746] rounded-xl">
       <img
         className="absolute h-full top-1/2 left-1/2 translate-y-[calc(-50%+110px)] -translate-x-1/2"
         src={"/win-bg-mask.png"}
         alt=""
       />
-      <div className="bg-[url(../public/win-bg.png)] flex flex-col justify-center items-center bg-center bg-cover w-[70vw] h-[940px] max-h-[calc(100vh-60px)] rounded-[24px] overflow-hidden">
+      <div className="bg-[url(../public/win-bg.png)] flex flex-col justify-center items-center bg-center bg-cover w-full lg:w-[70vw] h-screen lg:h-[940px] lg:max-h-[calc(100vh-60px)] rounded-[24px] overflow-hidden">
         <div className="relative mt-10 flex justify-center">
           <img
             className="relative w-[200px] lg:w-[316px]"
