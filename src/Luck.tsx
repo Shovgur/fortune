@@ -7,7 +7,7 @@ import your_luck_mob from "../public/try_your_luck_mob.png";
 
 const Luck = () => {
   return (
-    <div className="absolute bottom-0 w-full">
+    <div className="lg:relative absolute bottom-0 w-full">
       <div className="lg:bg-[url('../public/LuckBackground.png')] bg-[url('../public/bg_luck_mob.png')] bg-cover w-full h-full lg:max-w-[628px] lg:h-[326px] relative">
         <div className="flex flex-col items-center">
           <div className="pt-14 flex flex-col items-center gap-8 ">
