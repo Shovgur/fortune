@@ -81,7 +81,7 @@ const McRoulette = ({
     <>
       {showWinWindow && <WinWindow winner={{ title: winnerChip.chips_name }} />}
       <div
-        className={`lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg_mobile.png')]  lg:bg-[url('../public/case_roulette_bg.png')] bg-cover ${
+        className={`lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] h-screen flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg_mobile.png')]  lg:bg-[url('../public/case_roulette_bg.png')] bg-cover ${
           hideMainContainer ? "hidden" : ""
         }`}
       >
@@ -133,7 +133,7 @@ const McRoulette = ({
             alt="free_prize"
           />
         </div>
-        <div className="lg:w-full w-screen overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-3">
+        <div className="lg:w-full w-screen overflow-hidden relative bg-[#343b61] bg-opacity-30 mt-14 py-0 lg:py-3">
           <div className="z-[1100] absolute top-0 left-1/2 -translate-x-1/2 h-full w-[3px] bg-[url('/public/icons/win_devider.svg')]" />
           <div className=" absolute top-1/2 left-1/2 2xl:h-[220px] 2xl:w-[220px] lg:w-[134px] lg:h-[134px] w-[130px] h-[130px] -translate-y-1/2  bg-[url(/public/Perk.png)] -translate-x-1/2 bg-cover" />
           <div
