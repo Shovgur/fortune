@@ -16,10 +16,11 @@ body {
   align-items: center;
   background-color: black;
   height: 100vh;
+  overflow: auto;
 }
 @media (max-width: 1024px) {
   body {
-    display:block;
+    display: block;
     width: 100%;
     background-color: black;
     height: 100vh;
