@@ -1,35 +1,35 @@
-import React from 'react';
-import CaseItem from './CaseItem';
-import cases_bg from '../../public/Cases_bg.png';
-import Button from '@/Button';
-import bg_subscribe from './../../public/Item/Button/subscribe_bg_purple.png';
-import bg_for_button from '../../public/Item/ bg_for_button.png';
-import mobile_text from '../../public/Item/Cases/MobileCases/mobile_text.png';
+import React from "react";
+import CaseItem from "./CaseItem";
+import cases_bg from "../../public/Cases_bg.png";
+import Button from "@/Button";
+import bg_subscribe from "./../../public/Item/Button/subscribe_bg_purple.png";
+import bg_for_button from "../../public/Item/ bg_for_button.png";
+import mobile_text from "../../public/Item/Cases/MobileCases/mobile_text.png";
 
 const cases = [
   {
-    opened: '200 351',
-    price: '7,99$',
-    image: 'case_champion',
-    caseName: 'Champion Case',
+    opened: "200 351",
+    price: "7,99$",
+    image: "case_champion",
+    caseName: "Champion Case",
   },
   {
-    opened: '13 167',
-    price: '13,99$',
-    image: 'case_diamond',
-    caseName: 'Diamond Case',
+    opened: "13 167",
+    price: "13,99$",
+    image: "case_diamond",
+    caseName: "Diamond Case",
   },
   {
-    opened: '45 015',
-    price: '22,99$',
-    image: 'case_wheel',
-    caseName: 'Money Wheel Case',
+    opened: "45 015",
+    price: "22,99$",
+    image: "case_wheel",
+    caseName: "Money Wheel Case",
   },
   {
-    opened: '690 000',
-    price: '5,99$',
-    image: 'case_lucky',
-    caseName: 'Lucky Case',
+    opened: "690 000",
+    price: "5,99$",
+    image: "case_lucky",
+    caseName: "Lucky Case",
   },
 ];
 

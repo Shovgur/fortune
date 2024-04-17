@@ -1,4 +1,4 @@
-import React from "react";
+import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
 import case_1 from "../../public/Item/Cases/сase_champion.png";
 import case_2 from "../../public/Item/Cases/case_diamond.png";
@@ -10,11 +10,11 @@ import case_3_bg from "../../public/Item/Cases/Desktop_bg/case_3_bg.png";
 import case_4_bg from "../../public/Item/Cases/Desktop_bg/case_4_bg.png";
 import case_bg from "../../public/Item/case_bg_1.png";
 import button_bg from "../../public/Item/Button/buy_case_button.png";
-import case_1_mob from "../../public/Item/Cases/MobileCases/case_champion_mob.png";
-import case_2_mob from "../../public/Item/Cases/MobileCases/case_diamond_mob.png";
-import case_3_mob from "../../public/Item/Cases/MobileCases/case_lucky_mob.png";
-import case_4_mob from "../../public/Item/Cases/MobileCases/case_whell_mob.png";
 import IconsGroup from "@/components/ui/IconsGroup";
+import case_bg_mob_blue from "../animated/animated_data/case_animated_bg/Blue/bg.json";
+import case_bg_mob_green from "../animated/animated_data/case_animated_bg/Green/bg.json";
+import case_bg_mob_red from "../animated/animated_data/case_animated_bg/Red/bg.json";
+import case_bg_mob_yellow from "../animated/animated_data/case_animated_bg/Yellow/bg.json";
 
 interface CaseItemProps {
   opened: string;
@@ -52,22 +52,34 @@ const CaseItem: React.FC<CaseItemProps> = ({
       caseImage = case_2;
   }
 
-  let mobileBackground;
+  const isMobile = window.innerWidth <= 1024;
+
+  let mobileBackground = isMobile ? (
+    <Lottie animationData={case_bg_mob_green} />
+  ) : null;
   switch (image) {
     case "case_champion":
-      mobileBackground = case_1_mob;
+      mobileBackground = (
+        <Lottie className="absolute" animationData={case_bg_mob_green} />
+      );
       break;
     case "case_diamond":
-      mobileBackground = case_2_mob;
+      mobileBackground = (
+        <Lottie className="absolute" animationData={case_bg_mob_blue} />
+      );
       break;
     case "case_lucky":
-      mobileBackground = case_3_mob;
+      mobileBackground = (
+        <Lottie className="absolute" animationData={case_bg_mob_red} />
+      );
       break;
     case "case_wheel":
-      mobileBackground = case_4_mob;
+      mobileBackground = (
+        <Lottie className="absolute" animationData={case_bg_mob_yellow} />
+      );
       break;
     default:
-      mobileBackground = case_2_mob;
+      mobileBackground = null;
   }
 
   let desktopBackground;
@@ -88,18 +100,15 @@ const CaseItem: React.FC<CaseItemProps> = ({
       desktopBackground = case_bg;
   }
 
-  const isMobile = window.innerWidth <= 1024;
-
   return (
     <div
       style={{
-        backgroundImage: `url(${
-          isMobile ? mobileBackground : desktopBackground
-        })`,
+        backgroundImage: `url(${isMobile ? "" : desktopBackground})`,
       }}
-      className={`2xl:w-[288px] lg:w-[165px] w-[358px] bg-center h-[182px] lg:h-[280px] py-4 px-4 lg:px-0 lg:py-0 2xl:h-[486px] bg-cover rounded-xl`}
+      className={`2xl:w-[288px] relative lg:w-[165px] w-[358px] bg-center h-[182px] lg:h-[280px] py-4 px-4 lg:px-0 lg:py-0 2xl:h-[486px] bg-cover rounded-xl`}
     >
-      <div className=" lg:flex-col flex gap-5 lg:gap-0">
+      {isMobile && mobileBackground}
+      <div className=" lg:flex-col flex gap-5 lg:gap-0 relative z-20">
         <div className="flex flex-col 2xl:px-4 2xl:pt-6 lg:pt-4 lg:px-3">
           <div className="text-white hidden lg:flex justify-between lg:text-[10px] 2xl:text-[16px]">
             <p>Opened:</p>

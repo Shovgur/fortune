@@ -1,7 +1,6 @@
-import Button from "./Button";
-import continue_bg from "../public/Item/Button/continue_bg.png";
 import win_window_text from "../public/Item/win_window_text.png";
 import whell_prize from "/public/Item/whell_prize.png";
+import ContinuePurple from "./animated/Buttons/Continue_Purple";
 
 type Props = {
   winner: {
@@ -36,13 +35,14 @@ export default function WinWindow({ winner }: Props) {
           <p>{winner.title || winner.chip_name}</p>
         </div>
         <div className="flex justify-center">
-          <Button
+          {/* <Button
             size=" aspect-[372/82]"
             className="pt-12 lg:text-[26px] text-[16px]"
             to="/case"
             text="Continue"
             imgSrc={continue_bg}
-          />
+          /> */}
+          <ContinuePurple />
         </div>
       </div>
     </div>
