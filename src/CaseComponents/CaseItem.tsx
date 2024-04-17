@@ -1,9 +1,9 @@
 import Lottie from "lottie-react";
 import { Link } from "react-router-dom";
-import case_1 from "../../public/Item/Cases/сase_champion.png";
-import case_2 from "../../public/Item/Cases/case_diamond.png";
-import case_3 from "../../public/Item/Cases/case_wheel.png";
-import case_4 from "../../public/Item/Cases/case_lucky.png";
+import case_1 from "../animated/animated_data/case_animated_bg/Green/case.json";
+import case_2 from "../animated/animated_data/case_animated_bg/Blue/case.json";
+import case_3 from "../animated/animated_data/case_animated_bg/Red/case.json";
+import case_4 from "../animated/animated_data/case_animated_bg/Yellow/case.json";
 import case_1_bg from "../../public/Item/Cases/Desktop_bg/case_1_bg.png";
 import case_2_bg from "../../public/Item/Cases/Desktop_bg/case_2_bg.png";
 import case_3_bg from "../../public/Item/Cases/Desktop_bg/case_3_bg.png";
@@ -37,19 +37,21 @@ const CaseItem: React.FC<CaseItemProps> = ({
   let caseImage;
   switch (image) {
     case "case_champion":
-      caseImage = case_1;
+      caseImage = (
+        <Lottie className="absolute pt-4 lg:pl-0 pl-4" animationData={case_1} />
+      );
       break;
     case "case_diamond":
-      caseImage = case_2;
+      caseImage = <Lottie animationData={case_2} />;
       break;
     case "case_wheel":
-      caseImage = case_3;
+      caseImage = <Lottie animationData={case_3} />;
       break;
     case "case_lucky":
-      caseImage = case_4;
+      caseImage = <Lottie animationData={case_4} />;
       break;
     default:
-      caseImage = case_2;
+      caseImage = <Lottie animationData={case_1} />;
   }
 
   const isMobile = window.innerWidth <= 1024;
@@ -115,11 +117,9 @@ const CaseItem: React.FC<CaseItemProps> = ({
             <p>{opened}</p>
           </div>
 
-          <img
-            className="lg:w-[141px] lg:h-[100px] w-[181px] h-[124px] 2xl:w-[256px] 2xl:h-[175px]"
-            src={caseImage}
-            alt={`${image}_case`}
-          />
+          <div className="lg:w-[141px] relative lg:h-[100px] w-[181px] h-[124px] 2xl:w-[256px] 2xl:h-[175px]">
+            {caseImage}
+          </div>
           <div className="lg:flex flex-col  text-white">
             <p className="2xl:text-[20px] lg:text-[12px] pl-4 lg:pl-0">
               {caseName}
