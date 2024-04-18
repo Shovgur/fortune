@@ -1,3 +1,6 @@
+import Lottie from "lottie-react";
+import text_spin from "@/animated/animated_data/text_spin.json";
+
 export default function SpinButton({
   onClick,
   deg,
@@ -9,7 +12,7 @@ export default function SpinButton({
     <>
       <svg
         className={`w-full h-full cursor-pointer rounded-full ${
-          deg ? 'pointer-events-none cursor-auto' : ''
+          deg ? "pointer-events-none cursor-auto" : ""
         }`}
         width="190"
         height="214"
@@ -62,7 +65,7 @@ export default function SpinButton({
         </defs>
       </svg>
       <span className="absolute inline-block top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%-6px)] uppercase font-black text-[24px] lg:text-[40px] bg-[#C7984A] spin-shadow pointer-events-none">
-        SPIN
+        <Lottie animationData={text_spin} />
       </span>
     </>
   );
