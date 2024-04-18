@@ -72,12 +72,12 @@ const CaseItem: React.FC<CaseItemProps> = ({
       break;
     case "case_lucky":
       mobileBackground = (
-        <Lottie className="absolute" animationData={case_bg_mob_red} />
+        <Lottie className="absolute" animationData={case_bg_mob_yellow} />
       );
       break;
     case "case_wheel":
       mobileBackground = (
-        <Lottie className="absolute" animationData={case_bg_mob_yellow} />
+        <Lottie className="absolute" animationData={case_bg_mob_red} />
       );
       break;
     default:
