@@ -1,4 +1,3 @@
-import React from "react";
 import CaseItem from "./CaseItem";
 import cases_bg from "../../public/Cases_bg.png";
 import Button from "@/Button";
@@ -69,6 +68,7 @@ const CasePage: React.FC = () => {
         </div>
       </div>
       <img
+        loading="eager"
         className="absolute hidden lg:block z-10 top-1/2 -translate-y-1/2"
         src={cases_bg}
         alt=""
