@@ -6,6 +6,8 @@ import WinWindow from "./WinWindow";
 import Button from "./Button";
 import bg_for_button from "../public/Item/bg_for_button_whell.png";
 import bg_subscribe from "../public/Item/Button/subscribe_bg_purple.png";
+import money_bg from "@/animated/animated_data/money_bg.json";
+import Lottie from "lottie-react";
 
 const lots = [
   {
@@ -108,6 +110,10 @@ const DialogWhell = () => {
           />
         </div>
       </div>
+      <Lottie
+        className="absolute top-[13%] h-[650px]"
+        animationData={money_bg}
+      />
       <div className="relative w-[auto] h-auto lg:h-[80%] max-h-[358px] lg:max-h-none ">
         <img
           ref={wheelRef}
@@ -124,6 +130,7 @@ const DialogWhell = () => {
           }
           alt=""
         />
+
         <div className="w-full h-full relative [&>svg]:w-full [&>svg]:h-full shadow-inner">
           <StaticWheel />
         </div>
