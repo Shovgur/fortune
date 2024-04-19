@@ -1,9 +1,9 @@
 import CaseItem from "./CaseItem";
-import cases_bg from "../../public/Cases_bg.png";
+import cases_bg from "../../public/bg/Cases_bg.png";
 import Button from "@/Button";
 import bg_subscribe from "./../../public/Item/Button/subscribe_bg_purple.png";
 import bg_for_button from "../../public/Item/ bg_for_button.png";
-import mobile_text from "../../public/Item/Cases/MobileCases/mobile_text.png";
+import mobile_text from "../../public/Item/Cases/mobile_text.png";
 
 const cases = [
   {

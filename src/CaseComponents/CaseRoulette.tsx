@@ -81,7 +81,7 @@ const McRoulette = ({
     <>
       {showWinWindow && <WinWindow winner={{ title: winnerChip.chips_name }} />}
       <div
-        className={`lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] h-screen flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg_mobile.png')]  lg:bg-[url('../public/case_roulette_bg.png')] bg-cover ${
+        className={`lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] h-screen flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg_mobile.png')]  lg:bg-[url('../public/bg/case_roulette_bg.png')] bg-cover ${
           hideMainContainer ? "hidden" : ""
         }`}
       >
