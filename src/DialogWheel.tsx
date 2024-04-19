@@ -111,7 +111,7 @@ const DialogWhell = () => {
         </div>
       </div>
       <Lottie
-        className="absolute top-[13%] h-[650px]"
+        className="absolute top-[13%] h-[550px]"
         animationData={money_bg}
       />
       <div className="relative w-[auto] h-auto lg:h-[80%] max-h-[358px] lg:max-h-none ">
