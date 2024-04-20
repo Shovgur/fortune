@@ -117,7 +117,7 @@ const DialogWhell = () => {
       <div className="relative max-w-[400px]  h-auto lg:h-[80%] max-h-[370px] lg:max-h-none ">
         <img
           ref={wheelRef}
-          className="aspect-auto absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
+          className="w-[98%] absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
           src={prizes}
           style={
             deg > 0
