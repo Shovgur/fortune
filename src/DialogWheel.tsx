@@ -114,10 +114,10 @@ const DialogWhell = () => {
         className="absolute top-[13%] h-[550px]"
         animationData={money_bg}
       />
-      <div className="relative w-[auto] h-auto lg:h-[80%] max-h-[358px] lg:max-h-none ">
+      <div className="relative max-w-[400px]  h-auto lg:h-[80%] max-h-[358px] lg:max-h-none ">
         <img
           ref={wheelRef}
-          className="w-[calc(100%-13px)] h-[calc(100%-13px)]  absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
+          className="w-auto h-[calc(100%-13px)]  absolute left-1/2 top-1/2 translate-x-[calc(-50%+1.5px)] -translate-y-1/2 rounded-full transition-transform duration-8000"
           src={prizes}
           width={684}
           height={684}
