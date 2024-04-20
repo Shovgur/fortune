@@ -81,14 +81,14 @@ const McRoulette = ({
     <>
       {showWinWindow && <WinWindow winner={{ title: winnerChip.chips_name }} />}
       <div
-        className={`lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] h-screen flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg_mobile.png')]  lg:bg-[url('../public/bg/case_roulette_bg.png')] bg-cover ${
+        className={`lg:w-[1112px] lg:pt-12 lg:h-[736px] 2xl:w-[1478px] 2xl:h-[941px] h-screen flex items-center justify-between lg:my-9 flex-col bg-[url('../public/bg/bg_mobile.png')]  lg:bg-[url('../public/bg/case_roulette_bg.png')] bg-cover ${
           hideMainContainer ? "hidden" : ""
         }`}
       >
-        <div className=" max-h-8 flex justify-between w-full 2xl:px-6">
+        <div className=" max-h-8 flex justify-between w-full 2xl:px-6 px-6 mt-7">
           <Link className="flex items-start justify-start max-h-8" to="/case">
             <img
-              className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10 w-8 h-8"
+              className="2xl:w-[42px] 2xl:h-[42px] xl:w-[32px] xl:h-[32px] w-[22px] h-[22px]"
               src={back_button}
               alt="back_button"
             />
@@ -98,7 +98,7 @@ const McRoulette = ({
             to="/case"
           >
             <img
-              className="2xl:w-20 2xl:h-20 xl:w-16 xl:h-16 sm:w-10 sm:h-10"
+              className="2xl:w-[42px] 2xl:h-[42px] xl:w-[32px] xl:h-[32px] sm:w-[22px] sm:h-[22px] w-[12px] h-[12px]"
               src={close_button}
               alt="close_button"
             />
